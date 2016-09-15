@@ -1,0 +1,858 @@
+\documentclass[a4paper]{report} 
+\usepackage[utf8]{inputenc}          
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{ccaption}
+\usepackage[table]{xcolor} 
+\usepackage{listings}
+\usepackage[]{algorithm2e}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
+\title{Rapport de stage}
+\author{Zoé BRUNET}
+\date{04/04/16 - 26/08/16}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+\begin{document}
+
+\begin{titlepage}
+	\begin{figure}
+		\hbox{
+			\hspace*{1cm}
+			\includegraphics[width=3cm]{image/logo_centrale_nantes}
+			\hspace{7cm}
+			\includegraphics[width=5cm]{image/logo_kisio} \\[2.5cm]
+		}
+	\end{figure}
+	\begin{center}
+	\textsc{\Large Rapport de stage ingénieur}\\[1cm]
+	\textsc{\large 4 Avril 2016 — 26 Août 2016}\\[2cm]
+ 	\HRule \\[0.4cm]
+		{\huge \bfseries Création d'une API isochrone}
+	\HRule \\[2cm]	
+	 \includegraphics[width=\linewidth]{image/iso_garde}
+    \\[1.6cm]
+	    \begin{minipage}{0.46\textwidth}
+      \begin{flushleft} \large
+        Zoé \textsc{Brunet}\\
+        \emph{Option :} urbaniSTIC\\
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.46\textwidth}
+      \begin{flushright} \large
+        \emph{Tuteur entreprise :} Guillaume \textsc{Pinot}\\
+        \emph{tutrice école : } Myriam \textsc{Servières}
+      \end{flushright}
+    \end{minipage}
+        \vfill
+    	\end{center}
+\end{titlepage} 
+\tableofcontents 
+\newpage
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+\paragraph{} Je tiens à remercier mon maître de stage Guillaume Pinot pour sa disponibilité, son sens de la pédagogie et ses démonstrations de yoyo en pause et en grooming.  Je souhaite remercier également Stephan Simart ou "chef" pour les intimes, ses remarques abondantes en démo et son point de vue marketing ont été bénéfique pour ce stage.
+
+\paragraph{} Je remercie tout particulièrement toute l'équipe de RO pour son accueil bienveillant. Grâce à leur curiosité et à leur conseils je ne me suis jamais sentie bloquée. J'ai aimé la bonne ambiance au sein de l'équipe qui m'a permit de me sentir à l'aise tout au long de mon stage. Merci spécialement à Antoine et Pierre-Etienne pour m'avoir laissé gagner chaque fois que nous faisions une course à la piscine. Merci également à XL pour ces quizz C++, ses cours sur Pokemon Go et pour ne pas m'avoir laissé toute seule dans les bureaux en août.
+
+\paragraph{} Merci à Nicolas Sirletti pour ses rappels sur le cour de traitements d'images, à Antoine Frediani pour son expertise Qgis.
+
+\paragraph{} Enfin je remercie l'ensemble des professeurs de l'option urbaniSTIC pour cette année d'enseignement. J'ai découvert des problématiques inter disciplinaires qui m'ont réellement interessé et qui ont remis en cause la vision que j'avais de la ville.	
+
+\newpage
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+	
+\paragraph{} L'option urbaniSTIC a pour but d'enseigner à ses élèves comment utiliser de façon optimale les outils informatiques utils dans les villes contemporaines. Au cours des sept mois passés au sein de cette formation j'ai pu m'interesser à diverses thématiques : politiques et problématiques urbaines, modélisation et représentation de la ville, acquisition et gestion de données. Lors de nombreux cours il a été souligné l'importance des transports en commun intra et inter urbain pour assurer la cohésion d'une ville. C'est pourquoi j'ai jugé interessant d'effectuer un stage dans une entreprise s'interessant aux systemes d'infomations voyageurs (SIV).
+
+\paragraph{} Kisio digital est un éditeur SaaS de solutions d’information voyageur multimodales. En plus de son domaine d'activité, c'est l'implication de cette entreprise dans l'open source, l'open service et l'open data qui m'a donné envie d'y faire mon stage. J'ai donc rejoint l'équipe de recherche opérationnelle en avril 2016 pour une durée de vingt-et-une semaines.
+
+\paragraph{} Ce stage m'a permis d'approfondir les cours de programmation enseignés à l'Ecole Centrale de Nantes. J'ai pu y utiliser plusieurs langages comme Python, c++ et javascript. Je me suis également familiarisée avec la méthode agile utilisée dans de nombreuses entreprises d'informatique. 
+
+\paragraph{} Ce rapport s’attachera  à présenter le contexte de mon stage ingénieur, chez Kisio Digital. Il décrira la mise en place de deux nouvelles API calculant des isochrones dans le logiciel Navitia. Il expliquera le cheminement qui a été suivi afin de créer ces API et les mettre en production.
+
+\chapter{Contexte du stage}
+
+\section{Présentation de Kisio Digital}
+\subsection{Présentation général}
+			
+\paragraph{} Pour mieux accompagner les autorités organisatrices de transport public et de mobilité, le Groupe Keolis (leader  international du transport public de voyageurs) a regroupé ses expertises de Solutions et Services sous une marque unique, Kisio : Analysis, Consulting, Services, Solutions, et Digital. Kisio (650 collaborateurs et 60 millions de chifre d'affaire) propose un ensemble de solutions et services aux acteurs de la mobilité.
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=500pt]{image/orga_kisio}
+		\caption{Organisation au sein de Kisio}
+		\label{Organisation au sein de Kisio}
+	\end{center}
+\end{figure}
+
+\paragraph{} Leader de l'information voyageurs en France, Kisio Digital est une entreprise de services numériques. Elle édite des solutions de mobilité intelligentes au service des voyageurs et des acteurs du transport depuis 15 ans. Plus concrètement, elle réalise  des sites web, des applis mobiles et des systèmes d’information voyageurs intégrant la recherche d’itinéraire multimodal et le temps réel, l’achat de titres de transport et bientôt le mobile-ticketing. Son domaine d’activité s’étend des réseaux de transports urbains et régionaux, aux réseaux ferroviaires nationaux (SNCF), en passant par les systèmes d’information-voyageur des Régions. 
+				
+\paragraph{} Kisio Digital encourage aussi l'innovation ouverte auprès des communautés de réutilisateurs de ses logiciels open source tels que Navitia et de son API navitia.io qui calcule 7 milliards d'itinéraires tous les ans.
+
+\paragraph{} Par ailleurs Kisio Digital se définit comme le pionnier de la \emph{Resonsive Locomotion} dont l'entreprise propose 4 définitions différentes et complémentaires\cite{ref_canal_tp} :
+
+\begin{enumerate}
+	\item La responsive locomotion consiste à repenser les réseaux de transports à partir du contexte, des besoins et du point de vue de chaque voyageur. Pas l'inverse.
+	\item Ensemble d'outils qui visent à insuffler de l'agilité et de la souplesse dans les déplacements de chacun en autorisant les détours impromptus, en dessinant des parcours personnalisés, en organisant des déviations de dernière minute, etc.
+	\item Projet qui englobe tous les moyens de transport : la responsive locomotion part du principe que le parcours et les besoins de chaque voyageur importent plus que le type de véhicule emprunté.
+	\item Révolution d'interfaces et de services, dont l'ambition est de refonder la relation des hommes aux véhicules qui les meuvent.
+\end{enumerate}
+
+\subsection{La méthode agile}
+
+\paragraph {}Depuis 2014, Kisio digital a opérer des changements au sein de son entreprise pour adopter un mode de développement plus agile:
+
+\begin{quote}
+"La méthode Agile est une méthode de gestion de projets Web introduite “officiellement” en 2001 avec la parution du “Manifesto for Agile Software Development” co-écrit par 17 grands acteurs du domaine de l’informatique et du développement de logiciel. Leurs volontés étaient de proposer un nouveau mode de conception des programmes informatiques.
+
+Cette méthode fonctionne sur la base de l'itératif et de l’incrémental, les tâches vont s’effectuer petit à petit, par ordre de priorité, avec des  phases de contrôle et d’échange avec le client."\cite{ref_agile}
+\end{quote}
+
+\paragraph{} La métode agile permet un dialogue plus riche entre le client et l'entreprise. A tout moment le client peut donner son opinion car il a régulièrement accès aux différentes versions fonctionnelles du logicielle. Les logicielles produits sont adaptés en fonction des retours clients et répondent donc précisément à ses besoins. Elle repose en outre sur l'auto-organisation et donne plus de liberté aux développeurs et de visibilité sur le projet aux managers.
+
+
+\paragraph {Organisation au sein d'une équipe} Le temps de travail chez Kisio Digital est donc rythmé par des \emph{sprints} d'une durée de 15 jours. Au début de chaque sprint les équipes se réunissent pour faire un \emph{sprint planning} où elles éstimeront la durée et la difficulté des tâches qu'elle ont à réaliser. Ses tâches sont priorisées dans un \emph{backlog} en fonction des \emph{parties prenantes} où chaque équipe est présentée et remonte des besoins au moyen d'\emph{user story}. Au sein de chaque équipe on trouve un \emph{Product Owner} qui est garant de la vision fonctionnelle de l'équipe. Lors du sprint l'équipe se réunit quotidiennement pour faire des \emph{stand up}, c'est à dire des réunions où tous les membres de l'équipe se coordonnent et donne des informations sur leur avancement. Les membre de l'équipe font également des \emph{grooming} où ils se réunissent pour réévaluer le temps nécessaire à chaque user story, affiner les besoin qui y sont liés et les découper en sous tâches. A l'issu de chaque sprint il faut présenter les traveaux effectués dans une \emph{démo} où les clients sont conviés après chaque démo l'équipe doit faire une \emph{rétro} pour discuter des points positifs et négatifs du sprint. C'est lors de ces rétro que les équipes décident d'\emph{actions} à mettre en place afin de rendre le sprint suivant encore plus performant.
+
+\begin{wrapfigure}[15]{r}{8cm}
+		\includegraphics[width=8cm]{image/feature_team}
+		\caption{Organisation des feature team}
+		\label{Organisation des feature team}
+\end{wrapfigure}
+
+\paragraph {Feature team} Lorsque je suis arrivée chez Kisio Digital les équipes était organisé par produit et les membres de l'équipe avait souvent des compétences similaires. J'étais par éxemple dans l'équipe de Recherche Opérationnelle (RO) qui s'occupait du logiciel Navitia, tous les membres de cette équipe avaient des copétences en Python et en c++. En Juillet, Kisio digital a changé son organisation pour faire des \emph{feature team}. Les équipes ont été organisée autour de besoin, ce qui permettait pour chaque user story de modifier tous les produits impactés sans changer d'équipe. En outre ce type d'organisation permet une plus grande variété de profil au sein dune même équipe. Cependant, pour garder la cohérence de chaque produit des \emph{guildes} se sont formés. Ainsi à partir de juillet 2016 les membre de l'ancienne équipe Navitia ont été répartis entre l'équipe itinéraire et l'équipe horaire mais ont aussi fondé la guilde Navitia pour pouvoir garder une interface cohérente au sein du logiciel.
+
+\subsection{l'information voyageur}
+
+\paragraph{} Face à l'augmentation du nombre et de la complexité des déplacements, les usagers souhaitent disposer d'une information fiable sur l'ensemble des modes de transport qui sont mis à leur disposition. Cette information multimodale est difficile à mettre en œuvre en raison du nombre important d'acteurs intervenant dans l'organisation des transports et de l'information et donc de la multiplicité des sources d’informations. En outre, la mise à jour des informations et la prise en compte des perturbations constituent un enjeu important d'un point de vue opérationnel, car les usagers ont besoin d'informations fiables avant et pendant le voyage.  
+
+\paragraph{} Kisio digital propose à ses clients un panel de solutions leur permettant d'installer un service d'information voyageur performant et adapté à tous les voyageurs. Dans cette partie nous définieront brièvement les fonctions d'un tel système. 
+
+\paragraph{} Un système d'information voyageur répond à trois besoins importants : 
+				
+\begin{description}
+	\item[Simplifier la vie du voyageur:] Le voyageur peut préparer son itinéraire en toute sérénité. Il dispose de plusieurs infrmations lui permettant d'estimer la durée de son voyage 		mais également son coût, son impact sur l'environnement et les diférents modes de transport qu'il va pouvoir emprunter.
+	\item[Diminuer le stress :] L'opérateur peut communiquer avec le voyageur pour le rassurer, le prévenir en cas de perturbation et lui proposer des itinéraires alternatifs.
+	\item[Connaitre les besoins de déplacement :] Les autorités organisatrices peuvent mieux adapter leur offre et répondre de façon optimales à la demande grâce aux informations 	remontées par les SIV.
+\end{description}
+
+\paragraph{} Historiquement les acteur de la mobilité étaient les transporteurs publics et les vehicule personnels. L'information voyageur n'était disponnible que pour les transports publics et se présentait sous forme de fiches papier. Elle ne prenait pas en compte le temps réel et ne proposait aucune personnalisation. Avec la multimodalité due aux nouvelles mobilités et à l'apparition du numérique la demande d'information voyageur a changé. Les SIV doivent maintenant être interractifs et proposer plusieurs services :
+				
+\begin{description}
+	\item[Calculer des itinéraires:]  Il faut pouvoir poposer un "bon" itinéraire, mais cette notion est compliquée à définir. Il y a un compromis à faire entre l'itinéraire arrivant au 		plus tôt à destination et l'itinéraire avec le moins de correspondances.
+	\item[Accompagner le voyageur au cours du trajet :] Il faut pouvoir proposer en temps réel des alternatives en cas de perturbation sur l'itinéraire initialement prévu.
+	\item[Informer sur l'accessibilité d'un lieu :] Le voyageur a besoin de connaître l'offre de transport à proximité de son point de départ.
+\end{description}
+
+\paragraph{} Les solutions proposées par Kisio digital sont des solutions informatiques alimentées par le logiciel Navitia que nous décrirons plus en détail dans la partie suivante. 
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=300pt]{image/archi_SIV}
+		\caption{Architecture du SIV proposé par Kisio digital}
+		\label{Architecture du SIV proposé par Kisio digital}
+	\end{center}
+\end{figure}
+
+\section{Navitia une API open source}
+
+\paragraph{}La technologie Navitia est un agrégateur de données, qui facilite la création et l’exploitation de services d’information voyageur. Au-delà des fonctions de recherches d’itinéraires, cette solution offre toutes les fonctions permettant de prendre en compte les horaires adaptés (intégrant les différentes sources de perturbations), et l’ensemble des informations liées à l’accessibilité des transports, aux cheminements piétons ainsi que les tarifs. Navitia est d’ailleurs largement utilisé en France et couvre notamment les transports en commun de l’ile de France.  
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=100pt]{image/logo_navitia}
+	\end{center}
+\end{figure}
+
+\subsection{Les API} 
+\paragraph{} Navitia est un logiciel qui renvoit des flux fait pour être exploités par d'autres logiciels. On appelle cela une  \emph{API} (Application Programming Interface). L'API utilisant le logiciel navitia s'appelle navitia.io. Ce sont ensuite les utilisateurs de navitia.io qui mettent en forme les flux retournés par l'API. 
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=300pt]{image/API_navitia}
+		\caption{Innovation ouverte avec l'AI navitia.io}
+		\label{Innovation ouverte avec l'AI navitia.io}
+	\end{center}
+\end{figure}
+
+\paragraph{} En août 2016 navitia.io comptait 1400 réutilisateurs. Parmis eux : destineo.fr, le site de calculateur d'itinéraires pour la région Pays de la Loire, Flat Turtle: une petite startup belge qui installe des écrans d’informations dans les halls d’entreprises. 
+
+\subsection{L'open source, l'open data et l'open service}
+
+\paragraph{} En 2012 Kisio digital change de philosophie et se tourne vers l'open source. Un logiciel open source est un programme informatique dont le code source est distribué sous une licence permettant à quiconque de lire, modifier ou redistribuer ce logiciel. Le passage en open source a permis au logiciel de favoriser l’innovation du produit grâce à l’implication d’une communauté large de développeurs et d'assurer une pérennité de la solution pour tous les clients. 
+
+\paragraph{} En restant dans cet esprit, Kisio digital est maintenant un fournisseur d'open data. L'open data consiste a rendre accessible à tous des données, ici géographiques, rassemblées par une organisation. Cependant Kisio ne va pas sur le terrain pour collecter les données qu'il met en open data. Grâce à son logiciel Fusio, l'entreprise agrège différentes sources de données dans différents formats pour produire un fichier au format gtfs et un autre au format ntfs. Ces deux fichiers ainsi que toutes les données open data dont fusio s'est servit sont disponible gratuitement et librement sur le site navitia.io.
+
+\paragraph{} Enfin navitia.io est un open service. le site met à disposition de tous les services fournis par le logiciel Navitia. L'utilisateur eut ensuite utiliser Navitia qui est alimenté ar les données open data fournies par Kisio digital. 
+
+\subsection{Le logiciel Navitia}
+
+\paragraph{} L'architecture du logiciel navitia a beaucoup évolué ces dix dernières années.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=400pt]{image/historique_navitia}
+		\caption{Historique de Canal tp}
+		\label{Historique de Canal tp}
+	\end{center}
+\end{figure}
+
+\begin{quote}
+	\textbf{Maintenant Navitia est un \emph{SOA} sous forme d'\emph{ESB} intégrant des \emph{ETLs} spécifiques traitant le \emph{MDM}.}
+\end{quote}
+\begin{description}
+	\item[SOA :] concept d'une architecture orientée service. Organiser de manière homogène les traitements méiers déportés dans des services spécifiques.
+	\item[ESB :] Concept centrale d'une architecture SOA. Se connecte aux briques métiers pour fournir les services spécifiques.
+	\item[MDM :] standardisation des données. Agrégation : traitement des données dupliquées / dédoublées / enrichissement
+	\item[ETL :] connecteur aux données métier. Transforme les donnés d'un format vers un autre.
+\end{description}
+
+\paragraph{}Navitia repose sur un coeur codé en c++ nommé Kraken et une interface : Jörmungandr codée en python. Avant tout calcul, tartare un autre logiciel crée une base de données à partir de fichier ntfs. Le format ntfs a été créé pour navitia et est assez proche du format gtfs. Les données liées à la topologie des territoires et au filaire de voierie sont extaite d'open street map qui est une base de données gégraphiques collaborative.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=400pt]{image/architecture_navitia}
+		\caption{Architecture de Navitia}
+		\label{Architecture de Navitia}
+	\end{center}
+\end{figure}
+
+\paragraph{} Le calcul d'itinéraire qui est fait dans Kraken est basé sur l'algorithme RAPTOR. Kraken lit et interprète ensuite les itinéraires pour que Jörmungandr ne renvoie que les meilleurs itinéraires en fonction du profil du voyageur. Les informations sont échangées entre Jörmungandr et Kraken via des ficiers binéarisés généré grace à des fichiers en protocol buffer.
+
+\section{Présentation du stage}
+
+L'intitulé de mon stage était le suivant :
+
+\begin{quote}
+	\emph{"Simplification dans l’utilisation du service Isochrone de l’API de web-service http://api.navitia.io. Le stage concerne la simplification de l’utilisation du service 		"isochrone" qui permet de remonter les temps d'accès depuis un point donné vers toute destination. Il consiste à transformer la sortie actuelle de Navitia (qui est un tableau de 		point avec pour chacun une heure d'arrivée) en éléments graphiques vectoriels permettant de dessiner une carte, plus simple à intégrer. Il nécessite de manipuler principalement du 		code c++, ainsi que du code Python, des librairies de cartographie et des bases de données."}
+\end{quote}
+
+\paragraph{} Ce stage implique de coder dans Kraken afin de récupérer les isochrones déjà calculés par lalgorithme RAPTOR pour les traiter et les organiser de manière à rendre ces informations plus visuelles. Il faut ensuite coder dans Jörmungandr afin d'implémenter la nouvelle API. 
+
+\chapter{Déroulement du stage}
+
+\section{Définition des nouvelles API}
+
+\subsection{Les isochrones}
+
+\paragraph{}Les isochrones sont des outils permettant de mesurer l'accessibilité d'un lieu en terme de temps. Ils partent du principe que la proximité géographique de deux lieux n'implique pas nécessairement qu'il sera rapide d'aller de l'un à l'autre. Les isochrones permettent de raisonner en terme de temps d'accès plutôt qu'en terme de distance.
+
+\paragraph{}La définition comunément admise en cartographie pour un isochrone est : l'ensemble des points atteignables en un temps donné en partant d'un point donné. Cette définition n'est pourtant pas satisfaisante si on l'applique aux transports en commun. 
+
+\paragraph{}En effet contrairement au mode de transport tel que le vélo, la marche à pied ou la voiture, on ne peut pas se contenter de réfléchir en terme de durée lorsqu'on prend les transport en commun. Selon l'heure de départ ou d'arrivé souhaitée par l'usager l'offre de transport ne sera pas la même. Par conséquent le temps de trajet dépend de l'horaireoù ce trajet est effectué. Dès lors il faut redéfinir notre notion d'isochrone : un isochrone est l'ensemble de point atteignables en un temps donné en partant d'un point donné à une date et un horaire donné.
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/iso_8h}
+       		\caption{Isochrone à 8h00}
+		\label{Isochrone à 8h00}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/iso_00h30}
+       		\caption{Isochrone à 00h30}
+		\label{Isochrone à 00h30}
+	\end{minipage}
+	\legend{Isochrones de 10 minutes partant de Commerce}
+\end{figure}
+
+\paragraph{} Selon les usages qui en seront fait la définition des isochrones peut être étendu. Dans ce stage nous avons définit deux usages et donc deux types d'isochrones bien distincts : 
+
+\paragraph{Les isochrones vectoriels} Du début de mon stage à juin 2016 j'ai considéré qu'un isochrone permetait de repérer des services à proximité du point de départ. Ces isochrones sont des multipoligones utilisés pour calculer des intersections avec d'autres données vectorielle. A chaque isochrone correspond une et une seule durée qui est la durée maximale souhaité par l'utilisateur. On peut par exemple souhaiter savoir où se trouve les boulangeries à moins de 10 minutes de son lieu de travail. Pour celà on trace un isochrone de 10 minutes autour de ce lieux et on sélectionne les boulangerie à l'interieur du multipolygon ainsi obtenu.
+
+\paragraph{Les  heat maps} De juin à la fin de mon stage je me suis concentrée sur des isochrones permettant des tracés cartographiques plus précis. Cette fois il n'y a plus une seule durée. Le but est en un seul appel à l'API d'obtenir des données permettant de tracée une carte de chaleur selon le temps d'accés de chaque points. Contrairement à l'isochrone précédent la donnée en sortie de l'API n'est plus vectorielle.
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/iso_vect}
+       		\caption{Isochrone vectoriel}
+		\label{Isochrone vectoriel}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/heat_map}
+       		\caption{Heat map}
+		\label{Heat map}
+	\end{minipage}
+	\legend{Isochrones de 20 minutes partant de Châtelet à 8h00}
+\end{figure}
+
+\subsection{Les problématiques d'interface}
+
+\paragraph{} Comme nous l'avons vu dans la présentation de navitia, l'architecture du logiciel est assez complexe. La première étape de mon stage consistait donc à spécifier les paramètres d'entrée et de sortie de l'API. Ces paramètres ont été afinés tout au long du stage et ceux présentés dans cette patie different légèrement des paramètres définis au début de mon stage. 
+
+\paragraph{} Navitia est un unique logiciel qui propose différents services: calcul d'itinéraires, autocomplétion, affichage des horaires d'une ligne de bus, ... Pour que le logiciel reste facilement utilisable il est nécessaire que toutes les APIs soient cohérentes entre elles. Cela signifie : que les APIs doivent être nommé de la même manière, que le nom des paramètres ne doit pas changer d'une API à l'autre, que le cheminement pour acceder à une API doit toujours être le même. Il faut aussi que les nom propre à chaque API soit claire et sans équivoque. 
+
+\paragraph{Quelques rêgles à respecter} Pour le nommages des paramètres d'une API dans Navitia il y a quelques règles à respecter : les paramètres povent être apelés plusieurs fois sont suivis de crochets \emph{exemple: first\_section\_mode[]}. Les paramètres avancé et ne servant qu'au développeurs (par exemple pour debugués) sont précédés d'un underscore \emph{exemple: \_current\_datetime}. Le nom des APIs et de leurs paramètres sont en snake case \emph{exemple: heat\_maps}.
+
+\paragraph{} Outres les paramètres indispensables à la construction d'un isochrone que nous avons vu dans la partie précédente, il a fallu adater les paramètres utilisés dans le calcul d'itinéraire afin de maintenir la cohérence de l'interface. Voici un tableau des différents paramètres implémentés :
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\begin{center}
+	\begin{tabular}{|l|l|p{1.5cm}|p{6cm}|l|}
+	\hline
+	\multicolumn{5}{|c|}{\cellcolor{LightCyan} \textbf{Paramètres communs aux API isochrones et heat\_maps}} \\
+	\hline
+	\textbf{Requis} & \textbf{Nom} & \textbf{Type} & \textbf{Description} &  \textbf{valeur par défault} \\
+	\hline
+	non & from & id & Identifiant du point de départ de l'isochrone. &\\
+	\hline
+	non & to & id & Identifiant du point d'arrivé de l'isochrone, ce paramètre est utilisé quand on calcul un isochrone inverse. &\\
+	\hline
+	oui & datetime & iso-date-time & Date et horaire d'arrivée ou de départ de l'isochrone. & \\
+	\hline
+	non & forbidden\_uris[] & id & Identifiant permetant d'éviter une ligne, un mode, un réseau, etc. & \\
+	\hline
+	non & first\_section\_mode[] & tableau de string & Force le premier mode de rabattement qui n'est pas du transport en commun.  ce paramètre peut prendre les valeurs suivantes : \emph{walking, car, bike, bss}. Bss correspond aux vélos en libre service. Cest un tableau, il peut donc y avoir plusieurs modes séléctionnés.
+	\paragraph{}\emph{Note :} Choisir bss implique que la marche est également autorisé puisqu'il faut marcher pour aller jusqu'à la station des vélos en libre service.
+	\paragraph{}\emph{Note 2 :} Le paramètre est inclusif et non exclusif, donc pour exclure un mode il faut ajouter tous les autres modes & walking \\ 
+	\hline
+	non & last\_section\_mode[] & tableau de string & Comme first\_section\_mode[] mais pour le rabatement en fin d'itinéraire. & walking \\ 
+	\hline
+	non & max\_transferts & int & Nombre de correspondance maximum autorisées. & \\
+	\hline
+	non & max\_duration\_to\_pt & int & Durée maximum de rabattement pour atteindre un transport public afin de limiter la marce à pied ou le vélo. Son unité est la seconde
+	\paragraph{}\emph{Note :} On peut règler indépendemment la durée maximale de rabattement pour chaque mode en utilisant les paramètres : \emph{max\_walking\_duration\_to\_pt}, \emph{max\_bike\_duration\_to\_pt}, \emph{max\_bss\_duration\_to\_pt}, \emph{max\_car\_duration\_to\_pt} & 15*60s \\
+	\hline
+	non & walking\_speed & float & Vitesse de marche à pied en m/s & 1.12 m/s (4km/h) \\
+	\hline
+	non & bike\_speed & float & Vitesse en vélo en m/s & 4.1 m/s (14.7 km/h) \\
+	\hline
+	non & bss\_speed & float & Vitesse en vélo en libre service en m/s & 4.1 m/s (14.7 km/h) \\
+	\hline
+	non & car\_speed & float & Vitesse en voiture en m/s & 16.8 m/s (60 km/h) \\
+	\hline
+	non & data\_freshness & enum & Permet d'utiliser les données temps réel ou les données théorique. data\_freshness eut prendre deux valeurs : \emph{realtime} ou \emph{base\_schedule} & base\_schedule \\
+	\hline
+	non & traveler\_type & enum & C'est un profil prédéfinis où les paramètres \emph{first\_section\_mode[]}, \emph{last\_section\_mode[]}, \emph{walking\_speed}, \emph{bike\_speed} et \emph{bss\_speed} sont modifiés en fonction de la valeur choisie. Les valeurs possibles sont : \emph{standard}, \emph{slow\_walker}, \emph{fast\_walker} et \emph{luggage} & standard \\
+	\hline
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{|l|l|p{1.5cm}|p{6cm}|l|}
+	\hline
+	\multicolumn{5}{|c|}{\cellcolor{LightCyan} \textbf{API isochrones}} \\
+	\hline
+	\textbf{Requis} & \textbf{Nom} & \textbf{Type} & \textbf{Description} &  \textbf{valeur par défault} \\
+	\hline
+	non & max\_duration & int & Durée maximale de l'isochrone en secondes &\\
+	\hline
+	non & min\_duration & int & Durée minimale de l'isochrone en seconde & 0 secondes\\
+	\hline
+	non & Boundary\_duration[] & int & Pour faire plusieurs isochrones en une requête (limité à 10 \emph{boundary\_duation[]} par requête) & \\
+	\hline
+	\end{tabular}
+\end{center}
+
+Aucun de ces paramètres n'est obligatoire individuellement mais on ne peut pas faire un isochrone sans un paramètre \emph{max\_duration} ou \emph{boundary\_duration[]}. De plus tous les \emph{boundary\_duration} ayant une valeur suppérieur au paramètre \emph{max\_duration} (s'il est renseigné) seront ignorés. 
+
+\begin{center}
+	\begin{tabular}{|l|l|p{1.5cm}|p{6cm}|l|}
+	\hline
+	\multicolumn{5}{|c|}{\cellcolor{LightCyan} \textbf{API heat\_maps}} \\
+	\hline
+	\textbf{Requis} & \textbf{Nom} & \textbf{Type} & \textbf{Description} &  \textbf{valeur par défault} \\
+	\hline
+	oui & max\_duration & int & Durée maximale de l'isochrone en secondes &\\
+	\hline
+	non & resolution & int & Nombre de pixel sur une ligne ou une colonne de la grille qui sert à tracer l'isochrone & 500\\
+	\hline
+	\end{tabular}
+\end{center}
+
+\subsection{La réponse de l'API}
+
+\subsubsection{API isochrones} 
+
+\paragraph{}Navitia renvoi un flux json quelquesoit l'API requétée. Il fallait donc trouver le moyen de renvoyer des informations géographiques dans un tel flux. Le format geojson convenait parfaitement à ces critère.
+
+\begin{quote}
+	\emph{GeoJSON (de l'anglais Geographic JSON, signifiant littéralement JSON géographique) est un format ouvert d'encodage d'ensemble de données géospatiales simples utilisant la 		norme JSON (JavaScript Object Notation).\cite{ref}.}
+\end{quote}
+
+
+\paragraph{} Pendant les trois premiers mois de mon stage j'ai mis en place une première API isochrones qui traçait des cercles tout autour des points d'arrêt atteignables en transport en commun. En faisant varier le rayon de ces cercles en fonction du temps d'accès à ce point d'arrêt on obtient une assez bonne estimation des différent lieux accessible en un temps donné.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=400pt]{image/premiers_isochrones}
+		\caption{Cercles autour des points d'arrêt}
+		\label{Cercles autour des points d'arrêt}
+	\end{center}
+\end{figure}
+
+\paragraph{} Pour avoir un rendu plus agréable et pour n'avoir qu'un seul objet à manier fusionne ces cercles en un multi polygon.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=300pt]{image/iso_merged}
+		\caption{Multipolygon obtenu après fusion des cercles}
+		\label{Multipolygon obtenu après fusion des cercles}
+	\end{center}
+\end{figure}
+
+\paragraph{} Généralement, il est interessant de tracer plusieurs isochrones à différentes durées maximales. Mais pour afficher ensemble et correctement plusieurs isochrones il ne faut pas qu'il y ait de chevauchement entre eux puisque leur transparence s'ajouteraient et rendraient la carte dificilement lisible.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=300pt]{image/multi_iso}
+		\caption{Multiisochrone}
+		\label{Multiisocrone}
+	\end{center}	
+\end{figure}
+
+\paragraph{} Pour résoudre ce problème j'ai implémenté une borne min qui permet de tracer un isochrone entre deux durées. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=300pt]{image/iso_min}
+		\caption{Isochrone entre deux durées}
+		\label{Isochrone entre deux durées}
+	\end{center}	
+\end{figure}
+
+\paragraph{} La réponse de l'API isochrones est donc un flux json comportant entre autre un flux geojson qui décrit les multipolygones renvoyés. Le flux prend la forme suivante :
+
+
+\begin{lstlisting}[language=json,firstnumber=1]
+    {
+        isochrones :
+        [
+            0 :
+            {
+                max_duration : 120,
+                from : {...},
+                geojson : {...},
+                min_duration : 0,
+                requested_date_time: "20160718T164045"
+            },
+            1 : {...},
+            2 : {...}
+        ],
+        feed_publishers :
+        [],
+        links :
+        [
+            0 :
+            {
+                href : "http://localhost:5000/v1/coverage/default/stop_areas/{stop_area.id}",
+                type : "stop_area",
+                rel : "stop_areas",
+                templated : true
+            }
+        ],
+        warnings :
+        [
+            0 :
+            {
+                message : "This service is under construction. You can help through github.com/CanalTP/navitia",
+                id : "beta_api"
+            }
+        ]
+    }
+
+\end{lstlisting}
+
+\paragraph{} C'est dans le chanps geojson qu'est stoqué l'information géographique. Si on le regarde lus en détail on a un champ de cette forme :
+
+
+\begin{lstlisting}[language=json,firstnumber=1]
+
+    {
+        "geojson":{
+            "type":"MultiPolygon",
+            "coordinates":[
+                [
+                    [
+                        [
+                            2.3186837324,
+                            48.9324437042
+                        ],
+                        [
+                            2.3187241561,
+                            48.9324771012
+                        ],
+                        [
+                            2.3190737256,
+                            48.9327557777
+                        ],
+                        ["..."],
+                        ["..."],
+                        ["..."]
+                    ]
+                ]
+            ]
+        }
+    }
+\end{lstlisting}
+
+\paragraph{} Cependant ces dessins d'isochrones ne prennent pas en compte une certain nombre de contraintes physiques inhérentes au territoire où ils sont tracés comme le filaire de voierie ou les cours d'eau. Ainsi un isochrone peut indiquer que l'autre côté de la berge se trouve à moins de 5 min du point de départ demandé alors que le pont pour y acceder se trouve à plus de 10 minutes.
+
+\subsubsection{API heat\_maps} 
+
+\paragraph{} Nous venons de voir que l'API isochrones manquait parfois de précision, c'est pourquoi à la fin de mon stage j'ai fait des recherches sur une autre forme d'isochrones plus précis qui tiendrait compte du filaire de voierie. Pour celà j'ai dû discretiser la zone géographique sur laquelle je calculais l'isochrone. 
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/comp_iso_fin}
+       		\caption{Isochrone traversant une rivière}
+		\label{Isochrone traversant une rivière}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/comp_raster_fin}
+       		\caption{Heat map respectant la voierie}
+		\label{Heat map respectant la voierie}
+	\end{minipage}
+\end{figure}
+
+\paragraph{} Cette API est faite pour être plus précise que l'API isochrones, il est donc important de pouvoir définir le degré de discrétisation que l'on souhaite obtenir. Voici ici quelques exemples où on fait varier la grille sur laquelle on travaille.
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/heatmap_basse_reso}
+       		\caption{Heat map résolution resolution = 50}
+		\label{Heat map resolution = 50}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\includegraphics[width=8cm]{image/heatmap_haute_reso}
+       		\caption{Heat map resolution = 150}
+		\label{Heat map resolution = 150}
+	\end{minipage}
+\end{figure}
+
+\paragraph{}Cette fois l'API ne renvoit pas uniquement des informations géographiques. L'API doit renseigner les heure d'arrivées au plus tôt (ou les heure de départ au plus tard si on calcule un isochrone inverse) de tous les éléments discrétisés, elle doit également contenir les informations géograhiques permettant de géolocaliser chacun de ces éléments. De plus, le flux json renvoyé doit être le plus petit possible, il ne faut donc pas avoir d'information redondante. Le flux renvyé et donc le suivant :
+
+\begin{lstlisting}[language=json,firstnumber=1]
+    {
+        heat_maps :
+        [
+            0 :
+            {
+                requested_date_time : "20160718T164045",
+                from : {...},
+                heat_matrix : {...}
+            }
+        ],
+        links :
+        [
+            0 :
+            {
+                href : "http://localhost:5000/v1/coverage/default/stop_areas/{stop_area.id}",
+                type : "stop_area",
+                rel : "stop_areas",
+                templated : true
+            }
+        ],
+        warnings :
+        [
+            0 :
+            {
+                message : "This service is under construction. You can help through github.com/CanalTP/navitia",
+                id : "beta_api"
+            }
+        ]
+    }
+\end{lstlisting}
+
+\paragraph{} Les informations sont regroupés dans le champs heat\_matrix qui est de la forme suivante :
+
+\begin{lstlisting}[language=json,firstnumber=1]
+    heat_matrix :
+    {
+        line_headers :
+        [
+            0 :
+            {
+                cell_lat :
+                {
+                    min_lat : 48.7971,
+                    max_lat : 48.7996,
+                    center_lat : 48.7984
+                }
+            },
+            1 : {...},
+            2 : {...},
+            3 : {...},
+        ],
+        lines :
+        [
+            0 :
+            {
+                duration :
+                [
+                    0 : 1159,
+                    1 : null,
+                    2 : 1047,
+                    3 : 1035
+                ],
+                cell_lon :
+                {
+                    min_lon : 2.36887,
+                    center_lon : 2.37088,
+                    max_lon : 2.3729
+                }
+            },
+            1 : {...},
+            2 : {...},
+            3 : {...},
+        ]
+    }
+\end{lstlisting}
+
+\paragraph{} Pour dessiner les heat maps il faut allouer une couleur à chaque durée puis parcourir les objets correspondant au champ \emph{lines}. grâce au champ \emph{cell\_lon} on peut avoir la longitude de la cellule à colorer. Pour obtenir sa latitude il faut faire correspondre chaque objet du tableau dans le champ \emph{duration} a l'objet de même indice dans \emph{line\_headers}. Dans l'exemple précédent par exemple la cellule dont la longitude est comprise entre 2.36887 et 2.3729 et dont la latitude est entre 48.7971 et 48.7984 correspond à un temps d'accès de 1159 secondes.
+
+\section{Algorithmie}
+
+\paragraph{} Les deux APIs présentées dans ce rapport reposent sur des algorithmes très différents. Le but de cette partie est de présenté sommairement le raisonnement sur lequel elles reposent et d'expliquer les difficultés rencontrées. Le code détaillé est disponnible sur \color{blue} https://github.com/CanalTP/navitia.  
+ \color{blue}
+
+\color{black}
+\paragraph{}L'algorithme RAPTOR de navitia possède une fonction isochrone. Celle ci renvoit un tableau de tous les points d'arrêts avec leur temps d'accès atteignables à partir du point de départ dans l'horizon de temps donné. Je suis partie de ce tableau pour créer les deux APIs \emph{isochrones} et \emph{heat\_maps}.
+
+\subsection{pseudo code}
+
+\paragraph{isochrones :} Cette API consiste à tracer des cercles autour des points d'arrets atteignables.
+\newline
+
+\begin{algorithm}[H]
+ \KwData{isochrones de RAPTOR, point de départ, durée de l'isochrone}
+ \KwResult{multipolygone sous fore de geojson }
+ tracer un cercle autour du point de départ en fonction de la durée de l'isochrone.
+ \For{tous les points d'arrêts dans l'isochrone de raptor}{
+  \If{temps d'accès < durée maximale}{
+   calculer temps restant\;
+   tracer un cercle dont le rayon dépend du temps restant\;
+ }
+ }
+ fusionner les cercles\
+ \caption{Algorithme de l'API isochrones}
+\end{algorithm}
+
+\paragraph{heat\_maps :} Cette API est basée sur l'algorithme de Dijkstra. Cette algorithme permet de résoudre les problèmes de plus court chemin dans un graphe. En appliquant l'algorithme de Dijksta au filaire de voierie on peut donc déterminer le temps d'accès minium pour accéder à chaque noeud de la voierie en partant d'un point donné. Pour l'API heat\_maps nous avons besoin d'utiliser un algoithme de Dijkstat un peu particulier car nous ne donnons pas un seul point de départ. En effet l'algorithme de Dijkstra parcourt le graphe toujours à la même "vitesse". Donc pour prendre en compte les différents mode de transport, il faut donner plusieurs point de départ avec des dates de départs différentes à l'algorithme de Dijkstra. Par la suite nous appellerons cette algorithme Dijksta\_multi\_start.
+\newline
+
+\begin{algorithm}[H]
+ \KwData{isochrones de RAPTOR, point de départ, durée de l'isochrone, resolution de la grille, filaire de voierie}
+ \KwResult{tableau de durée et de coordonnées géograhiques}
+ \For{tous les points d'arrêts dans l'isochrone de raptor}{
+initialiser Dijksta\_multi\_start \;
+ }
+ lancer Dijksta\_multi\_start \;
+ tracer la grille\:
+ \For{chaque cellule de la grille}{
+ projeter le centre de la cellule sur le filaire de voierie \;
+ récupérer le temps d'accés calculé par Dijksta\_multi\_start pour le noeud du graphe le plus proche\;
+ remplir le tableau pour la cellule\;
+ }
+ \caption{Algorithme de l'API heat\_maps}
+\end{algorithm}
+
+\subsection{La géométrie sphérique}
+
+\begin{wrapfigure}[12]{r}{5cm}
+		\includegraphics[width=4cm]{image/lat_lon}
+		\caption{Coordonnées à la surface de la Terre}
+		\label{Coordonnées à la surface de la Terre}
+\end{wrapfigure}
+
+\paragraph{} Pour les deux APIs, j'ai eu besoin d'outils géométriques afin de tracer les isochrones. Navitia doit pouvoir être utiliser quelque soit l'endroit où on se trouve sur la Terre. Il est donc impossible de faire des approximation locale permettant de raisonner en géométrie euclidienne. J'ai donc dû utiliser de la géométrie sphérique.
+
+\paragraph{} La géométrie sphérique est la géométrie utilisée sur une surface sphérique. Elle diffère de la géométrie euclidienne pour laquelle la surface de base est un plan. En géométrie sphérique deux droites parallèles peuvent se couper sans être confondu et la somme des angles d'un triangle est suppérieur à l'angle plat. Beaucoup de définition géométrique doivent donc être redéfinie. Pour ce type de géométrie on n'utilise plus les coordonées cartésiennes mais les coordonnées sphériques. Dans le cas de la terre on appelle ces coordonées latitude et longitude.
+
+\subsubsection{Faire une grille sur une sphère}
+
+\paragraph{} Pour créer l'API heat\_maps j'ai eu besoin de diviser la zone que j'étudiais en une grille. Pour cela j'ai utilisé des paralléles et des méridiens de la sphère terrestre. ces lignes délimitent de petites zones qui en géométrie euclidienne seraient éuivalente à des rectangles. Cette méthode est très simple à intégrer mais ne garantit pas la même précision selon l'endroit du globe où est calculé l'isochrone. Ainsi plus on se raprochera d'un pôle, plus l'air d'une cellule sera faible et donc plus la précision augmentera.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=200pt]{image/grille_sphere}
+		\caption{Grille à la surface d'une sphère}
+		\label{Grille à la surface d'une sphère}
+	\end{center}
+\end{figure}
+
+\subsubsection{Tracer un cercle à la surface d'une sphère}
+
+\begin{wrapfigure}[15]{r}{5cm}
+		\includegraphics[width=5cm]{image/proj}
+		\caption{point projeté}
+		\label{point projeté}
+\end{wrapfigure}
+
+\paragraph{} Comme nous l'avons vu précédemment l'algorithme de l'API isochrones consiste essentiellement à tracer des cercles autour de points précis. Si on revient à la définition d'un cercle on peut dire que c'est l'ensemble de point à un distance constante que nous appellerons \emph{rayon} d'un point donné que nous appellerons \emph{centre}.
+
+\paragraph{} Le geojson est un format qui permet de caractériser des polygon comportant un nombre finit de points, il est donc impossible de tracer un cercle parfait. Il faut échantillonner le cercle. Pour que les points soient uniformément répartis il faut échantillonner le cercle en fonction de l'angle au centre. Cela permet également de facilement choisir la précision qui sera nécessaire à la cartographie sans trop alourdir le flux. La première chose à savoir faire est donc être cappable de déterminer les coordonnées sphériques d'un point à une distance donné d'un centre et avec un angle au centre donné. L'angle au centre est arbitrairement choisit comme étant l'angle entre le segment du méridien passant par le centre et le segment reliant le point projeté et le centre.
+
+\subsection{Résolution mathématique}
+
+\paragraph{} Pour implémenter la fonction que nous venons de décrire, il est nécessaire d'avoir quelques notions en géométrie sphériques. Nous avons donc utilisé la trigonométrie sphérique qui permet d'établir des liens entre les distances et les angles pour résoudre ce problème. Nous présentons ici les relations qui nous serons utiles dans un triangle rectangle sphérique:
+
+\paragraph{} En géométrie sphérique un triangle est une surface délimitée par des arcs de grands cercles. Un triangle rectangle sphérique est un rectangle dont l'un des angles mesure $\frac{\pi}{2}$ rad. Il est toutefois important de noter que la somme de ses angles est suppérieure à $\pi$.
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\begin{center}
+			\includegraphics[width=5cm]{image/sprint2_triangles_spheriques}
+       			\caption{Triangle rectangle spérique}
+			\label{Triangle rectangle spérique}
+		\end{center}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\begin{align}
+			\sin(a)&=\sin(c)\sin(\alpha) \\
+			\cos(c)&=\cos(b)\cos(a) 
+		\end{align}
+	\end{minipage}
+\end{figure}
+
+\paragraph{} Grâce à ses propriétés nous pouvons maintenant procédé à la résolution mathématique. Supposons que P soit le centre du cercle que nous souhaitons tracer. On nommera respectivement $\lambda$ et $\theta$ la longitude et la latitude du point projeté en direction $\phi$. Le rayon est $d$ et $\alpha$ correspond à l'ouverture d'angle entre P et le nouveau point. Enfin $R$ est le rayon de la Terre.
+
+\paragraph{} On modélise notre problème grâce aux figures suivantes :
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=400pt]{image/sprint2_petits-cercles}
+		\caption{Cercle à la surface d'une sphere}
+		\label{Cercle à la surface d'une sphere}
+	\end{center}
+\end{figure}
+
+\paragraph{} On peut donc facilement en déduire une relation entre $d$, $\alpha$ et $R$ :
+
+\begin{figure}[H]
+	\begin{minipage}[c]{.46\linewidth}
+		\begin{center}
+			\includegraphics[width=6cm]{image/relation_angle_rayon}
+       			\caption{Relation rayon ouverture d'angle}
+			\label{Relation rayon ouverture d'angle}
+		\end{center}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.46\linewidth}
+		\begin{align}
+			\alpha &= \frac{d}{R}
+		\end{align}
+	\end{minipage}
+\end{figure}	
+
+\paragraph{} Par ailleurs on sait que l'équation d'un cercle sur une sphère est l'entemble des points de coordonnées $\theta$ et $\lambda$ tel que \cite{ref_cercle_sphere}:
+\begin{align}
+	\cos\alpha &= \cos\theta\cos\theta_{0} + \sin\theta\sin\theta_{0}\cos(\lambda - \lambda_{0})
+\end{align}
+
+\paragraph{} En mettant en commun toutes ces équations on obtient donc le système d'équation suivant :
+
+\begin{align} 
+	p&=\arcsin(\sin(\alpha)\sin(\phi)) \\
+	\Delta \theta &= 
+	\left \{
+	\begin{array}{r c l}
+		\arccos(\frac{\cos(\alpha)}{\cos(p)}) \quad si& \phi \ge 0 \\
+		-\arccos(\frac{\cos(\alpha)}{\cos(p)}) \quad si& \phi < 0\\
+	\end{array}
+	\right. \\
+	\theta &= \theta_{0} + \Delta \theta \\
+	\Delta \lambda &= 
+	\left \{
+	\begin{array}{r c l}
+		\arccos(\frac{\cos(\alpha) - \sin(\theta)\sin(\theta_0)}{\cos(\theta)\cos(\theta_0)}) \quad si& \phi \in \left[ -\frac{\pi}{2},\frac{\pi}{2} \right]\\
+		-\arccos(\frac{\cos(\alpha) - \sin(\theta)\sin(\theta_0)}{\cos(\theta)\cos(\theta_0)}) \quad si& \phi \in \left] \frac{\pi}{2},\frac{3\pi}{2} \right]\\
+	\end{array}
+	\right. \\
+	\lambda &= \lambda_{0} + \Delta \lambda 
+\end{align}
+
+\paragraph{} Il suffit ensuite de faire varier $\phi$ entre $\left[ 0, 2\pi \right]$ pour obtenir un ensemble de point qui correspondra au cercle discrétisé que nous souhaitons tracer.
+
+\section{les performances}
+
+\paragraph{}Pour que l'API soit éfficace il était nécessaire que ses performance permettent de travailler avec des grands jeux de données. A titre d'exemple : l'île de France comporte plus de 40 000 points d'arret. Opimiser le temps de réponse était donc un enjeux majeur de mon stage. Dans cette partie nous verrons les diférents moyens utilisés pour optimiser le temps de réponse de l'API isochrones. 
+Toutes les courbes 
+
+iter1 = tri des cercles
+iter2 = suppression du intersect dans le merge (test redondant)
+iter3 = cercle par sym (on ne trace qu'un quart de cercle)
+iter4 = simplify le cercle
+iter5 = tout les 2 degres au lieu de tous les 1 degres
+iter6 = on enlève les cercles contenus dans les autres, en triant par rayon (puis on retrie par distance)
+iter7 = comparaison des différets tris
+iter8 = simplification formule de haversine
+retourner un string à parti de kraken
+trier les cercle en partant des plus proche du centre ou avec le plus rand rayon
+tracer le cercle par symétrie à partir du quart de cercle
+Diminuer le nombre de points par cercle (-> simpli ou un point tout les deux degrés)
+
+\section{la visualisation}
+
+\paragraph{} Même si mon stage consistait à retourner un flux geojson, il était essentiel de pouvoir visualiser ce flux affin de corriger les bugs. Dans un premier temps j'ai utilisé qgis en redirigeant les flux json renvoyé dans l'API dans un fichier .txt que je modifiais à la main afin d'en extraire le geojson. Mais cette solution était peu satisaisante et était trop coûteuse en temps. J'ai donc utilisé deux outils internes de Kisio Digital dans lesquels j'ai codé en javascript des appels à l'API isochrones. Cette partie présentera le fonctionnement des deux IHM utilisées.
+
+\subsection{Navitia Explorer}
+\subsection{Navitia Playground}
+
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+  \centering
+  \begin{tabular} {|l|c|c|}
+  \hline
+  Critère & Isochrone & Heat map \\
+  \hline
+  Temps de réponse & < 1s &  < 3 s \\
+  \hline
+  Taille du flux & < 1 Mo & 4 Mo \\
+  \hline
+  Facilement utilisable pour faire des filtres & ++ & + \\
+  \hline
+   Précision des temps d'acces & + & ++ \\
+  \hline
+  Prend en compte la voierie à l'arrivée & -- & ++ \\
+  \hline
+  facilement intégrable & ++ & + \\
+  \hline
+  \end{tabular}
+
+\appendix
+\listoffigures
+\addcontentsline{toc}{chapter}{Table des figures}
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\end{document} 
+\grid

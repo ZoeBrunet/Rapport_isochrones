@@ -1,0 +1,109 @@
+\select@language {french}
+\contentsline {chapter}{Remerciements}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {chapter}{Introduction}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {chapter}{\numberline {I}Contexte du stage}{4}
+\contentsline {section}{\numberline {I.1}Pr\IeC {\'e}sentation de Kisio Digital}{4}
+\contentsline {subsection}{\numberline {I.1.1}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}ral}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{5}
+\contentsline {subsection}{\numberline {I.1.2}La m\IeC {\'e}thode agile}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{Organisation au sein d'une \IeC {\'e}quipe}{5}
+\contentsline {paragraph}{Feature team}{5}
+\contentsline {subsection}{\numberline {I.1.3}l'information voyageur}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {I.2}Navitia une API open source}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {subsection}{\numberline {I.2.1}Les API}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {subsection}{\numberline {I.2.2}L'open source, l'open data et l'open service}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{8}
+\contentsline {subsection}{\numberline {I.2.3}Le logiciel Navitia}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {section}{\numberline {I.3}Pr\IeC {\'e}sentation du stage}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {chapter}{\numberline {II}D\IeC {\'e}roulement du stage}{10}
+\contentsline {section}{\numberline {II.1}D\IeC {\'e}finition des nouvelles API}{10}
+\contentsline {subsection}{\numberline {II.1.1}Les isochrones}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{Les isochrones vectoriels}{10}
+\contentsline {paragraph}{Les heat maps}{11}
+\contentsline {subsection}{\numberline {II.1.2}Les probl\IeC {\'e}matiques d'interface}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{Quelques r\IeC {\^e}gles \IeC {\`a} respecter}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {subsection}{\numberline {II.1.3}La r\IeC {\'e}ponse de l'API}{13}
+\contentsline {subsubsection}{API isochrones}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {subsubsection}{API heat\_maps}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{17}
+\contentsline {paragraph}{}{17}
+\contentsline {paragraph}{}{18}
+\contentsline {paragraph}{}{18}
+\contentsline {section}{\numberline {II.2}Algorithmie}{18}
+\contentsline {paragraph}{}{18}
+\contentsline {paragraph}{}{18}
+\contentsline {subsection}{\numberline {II.2.1}pseudo code}{19}
+\contentsline {paragraph}{isochrones :}{19}
+\contentsline {paragraph}{heat\_maps :}{19}
+\contentsline {subsection}{\numberline {II.2.2}La g\IeC {\'e}om\IeC {\'e}trie sph\IeC {\'e}rique}{19}
+\contentsline {paragraph}{}{19}
+\contentsline {paragraph}{}{19}
+\contentsline {subsubsection}{Faire une grille sur une sph\IeC {\`e}re}{19}
+\contentsline {paragraph}{}{19}
+\contentsline {subsubsection}{Tracer un cercle \IeC {\`a} la surface d'une sph\IeC {\`e}re}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {subsection}{\numberline {II.2.3}R\IeC {\'e}solution math\IeC {\'e}matique}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{22}
+\contentsline {paragraph}{}{22}
+\contentsline {paragraph}{}{22}
+\contentsline {section}{\numberline {II.3}les performances}{22}
+\contentsline {paragraph}{}{22}
+\contentsline {section}{\numberline {II.4}la visualisation}{22}
+\contentsline {paragraph}{}{22}
+\contentsline {subsection}{\numberline {II.4.1}Navitia Explorer}{22}
+\contentsline {subsection}{\numberline {II.4.2}Navitia Playground}{22}
+\contentsline {chapter}{Conclusion}{23}
+\contentsline {chapter}{Table des figures}{24}
+\contentsline {chapter}{Bibliographie}{25}
