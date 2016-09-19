@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  15 SEP 2016 10:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  18 SEP 2016 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -677,7 +677,7 @@ es.jpg> <./image/logo_kisio.png> <./image/iso_garde.png>] (./rapport.toc)
 
 ]
 Partie I.
-<image/orga_kisio.png, id=28, 1003.75pt x 577.15625pt>
+<image/orga_kisio.png, id=29, 1003.75pt x 577.15625pt>
 File: image/orga_kisio.png Graphic file (type png)
 
 <use image/orga_kisio.png>
@@ -691,7 +691,7 @@ Overfull \hbox (16.30313pt too wide) in paragraph at lines 122--123
 [4
 
  <./image/orga_kisio.png>]
-<image/feature_team.png, id=36, 599.23875pt x 353.32pt>
+<image/feature_team.png, id=37, 599.23875pt x 353.32pt>
 File: image/feature_team.png Graphic file (type png)
 
 <use image/feature_team.png>
@@ -783,13 +783,6 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 310--311
  []
 
 
-Overfull \hbox (3.89583pt too wide) in paragraph at lines 323--324
-\T1/cmr/m/n/10 à res-pec-ter : les pa-ra-mètres povent être ape-lés plu-sieurs 
-fois sont sui-vis de cro-chets \T1/cmr/m/it/10 exemple : first_section_mode[]\T
-1/cmr/m/n/10 .
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 339--339
 []|\T1/cmr/m/n/10 iso-date-
  []
@@ -856,17 +849,17 @@ Underfull \hbox (badness 1281) in paragraph at lines 362--362
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 362--362
-\T1/cmr/m/n/10 réel ou les don-nées théo-rique.
+\T1/cmr/m/n/10 réel ou les don-nées théo-riques.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--362
-\T1/cmr/m/n/10 data_freshness eut prendre deux
+Underfull \hbox (badness 7168) in paragraph at lines 362--362
+\T1/cmr/m/n/10 data_freshness peut prendre deux
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 364--364
-[]|\T1/cmr/m/n/10 C'est un pro-fil pré-dé-fi-nis où les
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]|\T1/cmr/m/n/10 C'est un pro-fil pré-dé-fini où les
  []
 
 
@@ -939,10 +932,10 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 File: image/comp_iso_fin.png Graphic file (type png)
 
 <use image/comp_iso_fin.png>
-Package pdftex.def Info: image/comp_iso_fin.png used on input line 535.
+Package pdftex.def Info: image/comp_iso_fin.png used on input line 533.
 (pdftex.def)             Requested size: 227.62204pt x 162.16995pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 535--536
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 533--534
 [][] 
  []
 
@@ -950,108 +943,218 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 535--536
 File: image/comp_raster_fin.png Graphic file (type png)
 
 <use image/comp_raster_fin.png>
-Package pdftex.def Info: image/comp_raster_fin.png used on input line 540.
+Package pdftex.def Info: image/comp_raster_fin.png used on input line 538.
 (pdftex.def)             Requested size: 227.62204pt x 161.87775pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 540--541
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 538--539
 [][] 
  []
 
-[16 <./image/comp_iso_fin.png> <./image/comp_raster_fin.png>]
-<image/heatmap_basse_reso.png, id=97, 702.625pt x 565.11125pt>
+<image/heatmap_basse_reso.png, id=94, 702.625pt x 565.11125pt>
 File: image/heatmap_basse_reso.png Graphic file (type png)
 
 <use image/heatmap_basse_reso.png>
-Package pdftex.def Info: image/heatmap_basse_reso.png used on input line 550.
+Package pdftex.def Info: image/heatmap_basse_reso.png used on input line 548.
 (pdftex.def)             Requested size: 227.62204pt x 183.07262pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 550--551
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 548--549
 [][] 
  []
 
-<image/heatmap_haute_reso.png, id=98, 707.64375pt x 564.1075pt>
+<image/heatmap_haute_reso.png, id=95, 707.64375pt x 564.1075pt>
 File: image/heatmap_haute_reso.png Graphic file (type png)
 
 <use image/heatmap_haute_reso.png>
-Package pdftex.def Info: image/heatmap_haute_reso.png used on input line 555.
+Package pdftex.def Info: image/heatmap_haute_reso.png used on input line 553.
 (pdftex.def)             Requested size: 227.62204pt x 181.4477pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 555--556
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 553--554
 [][] 
  []
 
-[17 <./image/heatmap_basse_reso.png> <./image/heatmap_haute_reso.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 652--654
+[16 <./image/comp_iso_fin.png> <./image/comp_raster_fin.png>] [17 <./image/heat
+map_basse_reso.png> <./image/heatmap_haute_reso.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 649--651
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
+Underfull \hbox (badness 10000) in paragraph at lines 666--668
 
  []
 
 <image/lat_lon.png, id=106, 240.9pt x 240.9pt>
 File: image/lat_lon.png Graphic file (type png)
  <use image/lat_lon.png>
-Package pdftex.def Info: image/lat_lon.png used on input line 691.
+Package pdftex.def Info: image/lat_lon.png used on input line 688.
 (pdftex.def)             Requested size: 113.81102pt x 113.81114pt.
-
-<image/grille_sphere.png, id=107, 562.1pt x 562.1pt>
+ [19 <./image/lat_lon.png>] <image/grille_sphere.png, id=112, 562.1pt x 562.1pt
+>
 File: image/grille_sphere.png Graphic file (type png)
 
 <use image/grille_sphere.png>
-Package pdftex.def Info: image/grille_sphere.png used on input line 706.
+Package pdftex.def Info: image/grille_sphere.png used on input line 703.
 (pdftex.def)             Requested size: 200.0pt x 199.99718pt.
- [19 <./image/lat_lon.png>]
-<image/proj.png, id=112, 641.39626pt x 640.3925pt>
+
+<image/proj.png, id=113, 641.39626pt x 640.3925pt>
 File: image/proj.png Graphic file (type png)
  <use image/proj.png>
-Package pdftex.def Info: image/proj.png used on input line 715.
+Package pdftex.def Info: image/proj.png used on input line 712.
 (pdftex.def)             Requested size: 142.26378pt x 142.03983pt.
 
-<image/sprint2_triangles_spheriques.png, id=113, 321.2pt x 321.2pt>
+<image/sprint2_triangles_spheriques.png, id=114, 321.2pt x 321.2pt>
 File: image/sprint2_triangles_spheriques.png Graphic file (type png)
 
 <use image/sprint2_triangles_spheriques.png>
 Package pdftex.def Info: image/sprint2_triangles_spheriques.png used on input l
-ine 733.
+ine 730.
 (pdftex.def)             Requested size: 142.26378pt x 142.26454pt.
  [20 <./image/grille_sphere.png> <./image/proj.png>]
 <image/sprint2_petits-cercles.png, id=122, 618.31pt x 275.0275pt>
 File: image/sprint2_petits-cercles.png Graphic file (type png)
 
 <use image/sprint2_petits-cercles.png>
-Package pdftex.def Info: image/sprint2_petits-cercles.png used on input line 75
-2.
+Package pdftex.def Info: image/sprint2_petits-cercles.png used on input line 74
+9.
 (pdftex.def)             Requested size: 400.0pt x 177.92644pt.
 
 <image/relation_angle_rayon.png, id=123, 711.65875pt x 706.64pt>
 File: image/relation_angle_rayon.png Graphic file (type png)
 
 <use image/relation_angle_rayon.png>
-Package pdftex.def Info: image/relation_angle_rayon.png used on input line 763.
+Package pdftex.def Info: image/relation_angle_rayon.png used on input line 760.
 
 (pdftex.def)             Requested size: 170.71652pt x 169.5108pt.
  [21 <./image/sprint2_triangles_spheriques.png> <./image/sprint2_petits-cercles
-.png (PNG copy)> <./image/relation_angle_rayon.png>] [22] [23
+.png (PNG copy)> <./image/relation_angle_rayon.png>] <image/profile_with_simpli
+fy.png, id=130, 1023.825pt x 769.87625pt>
+File: image/profile_with_simplify.png Graphic file (type png)
+
+<use image/profile_with_simplify.png>
+Package pdftex.def Info: image/profile_with_simplify.png used on input line 813
+.
+(pdftex.def)             Requested size: 300.0pt x 225.58437pt.
+ [22 <./image/profile_with_simplify.png>]
+<image/avant_opt.png, id=139, 1177.39874pt x 789.95125pt>
+File: image/avant_opt.png Graphic file (type png)
+
+<use image/avant_opt.png>
+Package pdftex.def Info: image/avant_opt.png used on input line 825.
+(pdftex.def)             Requested size: 400.0pt x 268.37495pt.
+
+<image/nb_poly_avt_opt.png, id=140, 1007.765pt x 493.845pt>
+File: image/nb_poly_avt_opt.png Graphic file (type png)
+
+<use image/nb_poly_avt_opt.png>
+Package pdftex.def Info: image/nb_poly_avt_opt.png used on input line 839.
+(pdftex.def)             Requested size: 400.0pt x 196.01233pt.
+ [23 <./image/avant_opt.png>]
+<image/nb_poly_ap_opt.png, id=145, 1011.78pt x 514.92375pt>
+File: image/nb_poly_ap_opt.png Graphic file (type png)
+
+<use image/nb_poly_ap_opt.png>
+Package pdftex.def Info: image/nb_poly_ap_opt.png used on input line 851.
+(pdftex.def)             Requested size: 400.0pt x 203.56943pt.
+
+<image/nvx_tmps.png, id=146, 1198.4775pt x 797.98125pt>
+File: image/nvx_tmps.png Graphic file (type png)
+
+<use image/nvx_tmps.png>
+Package pdftex.def Info: image/nvx_tmps.png used on input line 867.
+(pdftex.def)             Requested size: 400.0pt x 266.32997pt.
+ [24 <./image/nb_poly_avt_opt.png> <./image/nb_poly_ap_opt.png>] <image/taille_
+flux.png, id=153, 1198.4775pt x 700.6175pt>
+File: image/taille_flux.png Graphic file (type png)
+
+<use image/taille_flux.png>
+Package pdftex.def Info: image/taille_flux.png used on input line 877.
+(pdftex.def)             Requested size: 400.0pt x 233.83437pt.
+ [25 <./image/nvx_tmps.png> <./image/taille_flux.png>] <image/derniere_opt.png,
+ id=159, 1158.3275pt x 757.83125pt>
+File: image/derniere_opt.png Graphic file (type png)
+
+<use image/derniere_opt.png>
+Package pdftex.def Info: image/derniere_opt.png used on input line 905.
+(pdftex.def)             Requested size: 400.0pt x 261.6949pt.
+ [26 <./image/derniere_opt.png>]
+<image/navexplo_2.png, id=164, 932.48375pt x 540.0175pt>
+File: image/navexplo_2.png Graphic file (type png)
+
+<use image/navexplo_2.png>
+Package pdftex.def Info: image/navexplo_2.png used on input line 923.
+(pdftex.def)             Requested size: 400.0pt x 231.64267pt.
+
+<image/navexplo_iso.png, id=165, 1737.49126pt x 857.2025pt>
+File: image/navexplo_iso.png Graphic file (type png)
+
+<use image/navexplo_iso.png>
+Package pdftex.def Info: image/navexplo_iso.png used on input line 933.
+(pdftex.def)             Requested size: 400.0pt x 197.33554pt.
+ [27 <./image/navexplo_2.png> <./image/navexplo_iso.png>] <image/playground_1.p
+ng, id=171, 1896.08376pt x 798.985pt>
+File: image/playground_1.png Graphic file (type png)
+
+<use image/playground_1.png>
+Package pdftex.def Info: image/playground_1.png used on input line 948.
+(pdftex.def)             Requested size: 400.0pt x 168.54767pt.
+
+<image/playground_2.png, id=172, 1283.79625pt x 829.0975pt>
+File: image/playground_2.png Graphic file (type png)
+
+<use image/playground_2.png>
+Package pdftex.def Info: image/playground_2.png used on input line 960.
+(pdftex.def)             Requested size: 400.0pt x 258.32062pt.
+ [28 <./image/playground_1.png> <./image/playground_2.png>] <image/n_p_flux_jso
+n.png, id=177, 1665.22125pt x 846.16125pt>
+File: image/n_p_flux_json.png Graphic file (type png)
+
+<use image/n_p_flux_json.png>
+Package pdftex.def Info: image/n_p_flux_json.png used on input line 972.
+(pdftex.def)             Requested size: 400.0pt x 203.2507pt.
+
+<image/n_p_iso.png, id=178, 1701.35625pt x 853.1875pt>
+File: image/n_p_iso.png Graphic file (type png)
+ <use image/n_p_iso.png>
+Package pdftex.def Info: image/n_p_iso.png used on input line 982.
+(pdftex.def)             Requested size: 400.0pt x 200.59023pt.
+
+<image/n_p_isochrone.png, id=179, 1678.27pt x 855.195pt>
+File: image/n_p_isochrone.png Graphic file (type png)
+
+<use image/n_p_isochrone.png>
+Package pdftex.def Info: image/n_p_isochrone.png used on input line 990.
+(pdftex.def)             Requested size: 400.0pt x 203.82863pt.
+ [29 <./image/n_p_flux_json.png> <./image/n_p_iso.png>] <image/n_p_heat_map.png
+, id=185, 1724.4425pt x 860.21375pt>
+File: image/n_p_heat_map.png Graphic file (type png)
+
+<use image/n_p_heat_map.png>
+Package pdftex.def Info: image/n_p_heat_map.png used on input line 1000.
+(pdftex.def)             Requested size: 400.0pt x 199.5251pt.
+ [30 <./image/n_p_isochrone.png> <./image/n_p_heat_map.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
+
+ []
+
+[31
 
 ] (./rapport.lof)
 \tf@lof=\write4
 \openout4 = `rapport.lof'.
 
- (./rapport.bbl [24
+ (./rapport.bbl [32
 
-]) [25
+]) [33
 
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 7920 strings out of 493304
- 106764 string characters out of 6139871
- 263879 words of memory out of 5000000
- 11227 multiletter control sequences out of 15000+600000
+ 8010 strings out of 493304
+ 109253 string characters out of 6139871
+ 264074 words of memory out of 5000000
+ 11302 multiletter control sequences out of 15000+600000
  16988 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,16n,37p,1462b,1132s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,16n,37p,1469b,1657s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
@@ -1072,10 +1175,10 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sftt1000.pfb>
-Output written on rapport.pdf (26 pages, 11409762 bytes).
+Output written on rapport.pdf (34 pages, 17150182 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

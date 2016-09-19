@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {I.1}{\ignorespaces Organisation au sein de Kisio}}{4}
 \contentsline {figure}{\numberline {I.2}{\ignorespaces Organisation des feature team}}{5}
-\contentsline {figure}{\numberline {I.3}{\ignorespaces Architecture du SIV propos\IeC {\'e} par Kisio digital}}{6}
+\contentsline {figure}{\numberline {I.3}{\ignorespaces Architecture du SIV propos\IeC {\'e} par Kisio Digital}}{6}
 \contentsline {figure}{\numberline {I.4}{\ignorespaces Innovation ouverte avec l'AI navitia.io}}{7}
 \contentsline {figure}{\numberline {I.5}{\ignorespaces Historique de Canal tp}}{8}
 \contentsline {figure}{\numberline {I.6}{\ignorespaces Architecture de Navitia}}{8}
@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {II.3}{\ignorespaces Isochrone vectoriel}}{11}
 \contentsline {figure}{\numberline {II.4}{\ignorespaces Heat map}}{11}
 \contentsline {figure}{\numberline {II.5}{\ignorespaces Cercles autour des points d'arr\IeC {\^e}t}}{13}
-\contentsline {figure}{\numberline {II.6}{\ignorespaces Multipolygon obtenu apr\IeC {\`e}s fusion des cercles}}{14}
+\contentsline {figure}{\numberline {II.6}{\ignorespaces Multipolygone obtenu apr\IeC {\`e}s fusion des cercles}}{14}
 \contentsline {figure}{\numberline {II.7}{\ignorespaces Multiisochrone}}{14}
 \contentsline {figure}{\numberline {II.8}{\ignorespaces Isochrone entre deux dur\IeC {\'e}es}}{15}
 \contentsline {figure}{\numberline {II.9}{\ignorespaces Isochrone traversant une rivi\IeC {\`e}re}}{16}
@@ -25,3 +25,18 @@
 \contentsline {figure}{\numberline {II.16}{\ignorespaces Triangle rectangle sp\IeC {\'e}rique}}{21}
 \contentsline {figure}{\numberline {II.17}{\ignorespaces Cercle \IeC {\`a} la surface d'une sphere}}{21}
 \contentsline {figure}{\numberline {II.18}{\ignorespaces Relation rayon ouverture d'angle}}{21}
+\contentsline {figure}{\numberline {II.19}{\ignorespaces Interface de google CPU profiler}}{22}
+\contentsline {figure}{\numberline {II.20}{\ignorespaces Profile de temps de r\IeC {\'e}ponse avant optimisation}}{23}
+\contentsline {figure}{\numberline {II.21}{\ignorespaces Nombre de polygonnes pour un ordre al\IeC {\'e}atoire}}{24}
+\contentsline {figure}{\numberline {II.22}{\ignorespaces Nombre de polygonnes lorsqu'on ordonne les points d'arr\IeC {\^e}ts}}{24}
+\contentsline {figure}{\numberline {II.23}{\ignorespaces En rouge: temps de r\IeC {\'e}ponse avant trie et r\IeC {\'e}\IeC {\'e}chantillonage, en bleu : temps de r\IeC {\'e}ponse apr\IeC {\`e}s}}{25}
+\contentsline {figure}{\numberline {II.24}{\ignorespaces En rouge: taille du flux avant trie et r\IeC {\'e}\IeC {\'e}chantillonage, en bleu : taille du flux apr\IeC {\`e}s}}{25}
+\contentsline {figure}{\numberline {II.25}{\ignorespaces En rouge: temps de r\IeC {\'e}ponse avant utilisation de la formule simplifi\IeC {\'e}e, en bleu : temps de r\IeC {\'e}ponse apr\IeC {\`e}s}}{26}
+\contentsline {figure}{\numberline {II.26}{\ignorespaces Interface de Navitia explorer}}{27}
+\contentsline {figure}{\numberline {II.27}{\ignorespaces Navitia explorer : onglet isochron}}{27}
+\contentsline {figure}{\numberline {II.28}{\ignorespaces page d'accueil de Navitia playground}}{28}
+\contentsline {figure}{\numberline {II.29}{\ignorespaces Page de cr\IeC {\'e}ation de requ\IeC {\^e}te}}{28}
+\contentsline {figure}{\numberline {II.30}{\ignorespaces Navitia playground: requ\IeC {\^e}te d'isochrone}}{29}
+\contentsline {figure}{\numberline {II.31}{\ignorespaces Navitia playground: isochrone isol\IeC {\'e}}}{29}
+\contentsline {figure}{\numberline {II.32}{\ignorespaces Navitia playground: isochrones group\IeC {\'e}s}}{30}
+\contentsline {figure}{\numberline {II.33}{\ignorespaces Navitia playground: requ\IeC {\^e}te d'heat maps}}{30}
