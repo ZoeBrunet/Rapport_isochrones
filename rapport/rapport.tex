@@ -409,13 +409,13 @@ Aucun de ces paramètres n'est obligatoire individuellement mais on ne peut pas 
 \end{quote}
 
 
-\paragraph{} Pendant les trois premiers mois de mon stage j'ai mis en place une première API \emph{isochrones} qui traçait des cercles tout autour des points d'arrêt atteignables en transport en commun. En faisant varier le rayon de ces cercles en fonction du temps d'accès à ce point d'arrêt on obtient une assez bonne estimation des différents lieux accessibles en un temps donné.
+\paragraph{} Pendant les trois premiers mois de mon stage j'ai mis en place une première API \emph{isochrones} qui traçait des cercles tout autour des points d'arrêts atteignables en transport en commun. En faisant varier le rayon de ces cercles en fonction du temps d'accès à ce point d'arrêt on obtient une assez bonne estimation des différents lieux accessibles en un temps donné.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=400pt]{image/premiers_isochrones}
-		\caption{Cercles autour des points d'arrêt}
-		\label{Cercles autour des points d'arrêt}
+		\caption{Cercles autour des points d'arrêts}
+		\label{Cercles autour des points d'arrêts}
 	\end{center}
 \end{figure}
 
@@ -714,15 +714,15 @@ initialiser Dijksta\_multi\_start \;
 		\label{point projeté}
 \end{wrapfigure}
 
-\paragraph{} Comme nous l'avons vu précédemment l'algorithme de l'API isochrones consiste essentiellement à tracer des cercles autour de points précis. Si on revient à la définition d'un cercle on peut dire que c'est l'ensemble de point à un distance constante que nous appellerons \emph{rayon} d'un point donné que nous appellerons \emph{centre}.
+\paragraph{} Comme nous l'avons vu précédemment l'algorithme de l'API isochrones consiste essentiellement à tracer des cercles autour de points précis. Si on revient à la définition d'un cercle on peut dire que c'est l'ensemble de points à une distance constante que nous appellerons \emph{rayon} d'un point donné que nous appellerons \emph{centre}.
 
-\paragraph{} Le geojson est un format qui permet de caractériser des polygon comportant un nombre finit de points, il est donc impossible de tracer un cercle parfait. Il faut échantillonner le cercle. Pour que les points soient uniformément répartis il faut échantillonner le cercle en fonction de l'angle au centre. Cela permet également de facilement choisir la précision qui sera nécessaire à la cartographie sans trop alourdir le flux. La première chose à savoir faire est donc être cappable de déterminer les coordonnées sphériques d'un point à une distance donné d'un centre et avec un angle au centre donné. L'angle au centre est arbitrairement choisit comme étant l'angle entre le segment du méridien passant par le centre et le segment reliant le point projeté et le centre.
+\paragraph{} Le geojson est un format qui permet de caractériser des polygones comportant un nombre fini de points, il est donc impossible de tracer un cercle parfait qui est un ensemble infini de points. Il faut discrétiser le cercle. Pour que les points soient uniformément répartis il faut échantillonner le cercle en fonction de l'angle au centre. Cela permet également de facilement choisir le nombre de points et donc la précision qui sera nécessaire à la cartographie sans trop alourdir le flux. La première chose à savoir faire est donc être capable de déterminer les coordonnées sphériques d'un point à une distance donnée d'un centre et avec un angle au centre donné. L'angle au centre est arbitrairement choisit comme étant l'angle entre le segment du méridien passant par le centre et le segment reliant le point projeté et le centre, sur le schéma ci-contre il est noté $\theta$.
 
-\subsection{Résolution mathématique}
+\subsection{Résolution mathématiques}
 
-\paragraph{} Pour implémenter la fonction que nous venons de décrire, il est nécessaire d'avoir quelques notions en géométrie sphériques. Nous avons donc utilisé la trigonométrie sphérique qui permet d'établir des liens entre les distances et les angles pour résoudre ce problème. Nous présentons ici les relations qui nous serons utiles dans un triangle rectangle sphérique:
+\paragraph{} Pour implémenter la fonction que nous venons de décrire, il est nécessaire d'avoir quelques notions de géométrie sphérique. Nous avons donc utilisé la trigonométrie sphérique, qui permet d'établir des liens entre les distances et les angles, pour résoudre ce problème. Nous présentons ici les relations qui nous serons utiles dans un triangle rectangle sphérique.
 
-\paragraph{} En géométrie sphérique un triangle est une surface délimitée par des arcs de grands cercles. Un triangle rectangle sphérique est un rectangle dont l'un des angles mesure $\frac{\pi}{2}$ rad. Il est toutefois important de noter que la somme de ses angles est suppérieure à $\pi$.
+\paragraph{} En géométrie sphérique un triangle est une surface délimitée par des arcs de grands cercles. Un triangle rectangle sphérique est un rectangle dont l'un des angles mesure $\frac{\pi}{2}$ rad. Il est toutefois important de noter que la somme des angles d'un tel triangle est suppérieure à $\pi$ et que les relations de trigonométrie euclidienne ne sont pas valides ici. A la place on utilise les relations suivantes :
 
 \begin{figure}[H]
 	\begin{minipage}[c]{.46\linewidth}
@@ -740,7 +740,7 @@ initialiser Dijksta\_multi\_start \;
 	\end{minipage}
 \end{figure}
 
-\paragraph{} Grâce à ses propriétés nous pouvons maintenant procédé à la résolution mathématique. Supposons que P soit le centre du cercle que nous souhaitons tracer. On nommera respectivement $\lambda$ et $\theta$ la longitude et la latitude du point projeté en direction $\phi$. Le rayon est $d$ et $\alpha$ correspond à l'ouverture d'angle entre P et le nouveau point. Enfin $R$ est le rayon de la Terre.
+\paragraph{} Grâce à ses propriétés nous pouvons maintenant procéder à la résolution mathématiques. Supposons que le point P de coordonnées ($\theta_{0}$, $\lambda_{0}$) soit le centre du cercle que nous souhaitons tracer. On nommera respectivement $\lambda$ et $\theta$ la longitude et la latitude du point projeté formant un angle $\phi$ avec le méridien passant par P. Le rayon du cercle est $d$ et $\alpha$ correspond à l'ouverture d'angle entre P et le nouveau point. Enfin $R$ est le rayon de la Terre.
 
 \paragraph{} On modélise notre problème grâce aux figures suivantes :
 
@@ -796,13 +796,13 @@ initialiser Dijksta\_multi\_start \;
 	\lambda &= \lambda_{0} + \Delta \lambda 
 \end{align}
 
-\paragraph{} Il suffit ensuite de faire varier $\phi$ entre $\left[ 0, 2\pi \right]$ pour obtenir un ensemble de point qui correspondra au cercle discrétisé que nous souhaitons tracer.
+\paragraph{} Il suffit ensuite de faire varier $\phi$ entre $\left[ 0, 2\pi \right]$ avec un pas constant pour obtenir un ensemble de point qui correspondra au cercle discrétisé que nous souhaitons tracer.
 
 \section{Les performances}
 
-\paragraph{}Pour que l'API soit efficace il était nécessaire que ses performances permettent de travailler avec des grands jeux de données. A titre d'exemple : l'île de France comporte plus de 40 000 points d'arret. Opimiser le temps de réponse était donc un enjeux majeur de mon stage. Dans cette partie nous verrons les diférents moyens utilisés pour optimiser le temps de réponse de l'API isochrones et heat\_maps. 
+\paragraph{}Pour que l'API soit efficace il était nécessaire que ses performances permettent de travailler avec des grands jeux de données. A titre d'exemple : l'île de France comporte plus de 40 000 points d'arrêts. Optimiser le temps de réponse de Navitia était donc un enjeu majeur de mon stage. Dans cette partie nous verrons les diférents moyens utilisés pour optimiser le temps de réponse de l'API isochrones et heat\_maps. 
 
-\paragraph{}Le logiciel Navitia est paramétré de façon à ce que Jormungandr renvoie un message d'erreur si le temps de calcul dans Kraken dépasse 10 secondes. Il a donc fallu prendre en compte cette contrainte pour rendre les deux APIs opérationnelles. Dans la suite de cette partie, toutes les courbes représentées feront référence à l'API isochrones qui a bénéficier d'une plus longue étude de ses performence.
+\paragraph{}Le logiciel Navitia est paramétré de façon à ce que Jormungandr renvoie un message d'erreur si le temps de calcul dans Kraken dépasse 10 secondes. Il a donc fallu prendre en compte cette contrainte pour rendre les deux APIs opérationnelles. Dans la suite de cette partie, toutes les courbes représentées feront référence à l'API isochrones qui a bénéficier d'une plus longue étude de ses performances.
 
 \subsection{Méthodologie}
 
@@ -816,35 +816,35 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{} \emph{Google CPU profiler} permet d'éstimer le nombre d'appel fait à chaque fonction aissi que le pourcentage de temps passé dans chaque fonction. Pour avoir une estimation fiable de ces données on a utilisé un script shell permettant de faire une centaine d'appel de façon automatique à l'API isochrone. On peut ainsi identifier les fonctions les plus coûteuse en temps. Cette méthode permet d'identifier les fonctions à optimiser en priorité. 
+\paragraph{} \emph{Google CPU profiler} permet d'éstimer le nombre d'appels fait à chaque fonction ainsi que le pourcentage de temps passé dans chaque fonction. Pour avoir une estimation fiable de ces données on a utilisé un script shell permettant de faire une centaine d'appel de façon automatique aux APIs isochrones et heat\_maps. On peut ainsi identifier les fonctions les plus coûteuse en temps. Cette méthode permet d'identifier les fonctions à optimiser en priorité. 
 
-\paragraph{} En une requète on peut demander au plus 10 isochrones. Il faut donc que le temps de réponse pour un isochrone soit de l'ordre de $0.5$ seconde et ceux quelque soit la durée et l'emplacement de l'isochrone. Nous avons éstimé que si cette condition était satsifaite à 8h00 du matin à la station châtelet alors l'API pouvait passé en production. Avant toute optimisation on avait les temps de réponse suivant :
+\paragraph{} En une requète on peut demander au plus 10 isochrones. Il faut donc que le temps de réponse pour un isochrone soit de l'ordre de $0.5$ seconde et ceux quelque soit la durée et l'emplacement de l'isochrone. Nous avons estimé que si cette condition était satsifaite à 8h00 du matin à la station châtelet alors l'API pouvait passer en production. Avant toute optimisation on avait les temps de réponse suivant :
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=400pt]{image/avant_opt}
-		\caption{Profile de temps de réponse avant optimisation}
-		\label{Profile de temps de réponse avant optimisation}
+		\caption{Profile de temps de réponse avant optimisation pour l'API isochrones}
+		\label{Profile de temps de réponse avant optimisation pour l'API isochrones}
 	\end{center}
 \end{figure}
 
 \subsection{Influence du trie}
 
-\paragraph{}Comme nous l'avons dit précédemment le réseau de transport en commun de l'île de France comporte plus de 40 000 points d'arrêt. Pour des grandes durées le nombre de point d'arrêt contenu dans un isochrone est donc très important. Or dans l'algorithme utilisé le temps de réponse dépend du nombre de polygone dans le multipolygone qui représente l'isochrone. Il faut donc avoir le moins de polygone possible dans le multipolygone. C'est pourquoi, à chaque fois qu'on ajoute un cercle on essaye de le faire fusionner avec les polygonne déjà existant. 
+\paragraph{}Comme nous l'avons dit précédemment le réseau de transport en commun de l'île de France comporte plus de 40 000 points d'arrêts. Pour de grandes durées le nombre de points d'arrêts contenus dans un isochrone est donc très important. Or dans l'algorithme utilisé le temps de réponse dépend du nombre de polygones dans le multipolygone qui représente l'isochrone. Il faut donc avoir le moins de polygones possible dans le multipolygone. C'est pourquoi, à chaque fois qu'on ajoute un cercle on essaye de le faire fusionner avec les polygones déjà existant. 
 
 \paragraph{} Lorsque les points d'arrêts sont pris dans un ordre aléatoire on à la courbe suivante pour un isochrone partant de châtelet à 8h00 et ayant une durée d'une heure. Chaque itération correspond à la prise en compte d'un nouveau point d'arrêt.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=400pt]{image/nb_poly_avt_opt}
-		\caption{Nombre de polygonnes pour un ordre aléatoire}
-		\label{Nombre de polygonnes pour un ordre aléatoire}
+		\caption{Nombre de polygones pour un ordre aléatoire}
+		\label{Nombre de polygones pour un ordre aléatoire}
 	\end{center}
 \end{figure}
 
-\paragraph{} On observe que le nombre de polygon augmente très rapidement. Maintenant si on pense à trier les cercle en fonction de leur distance par rapport à leur distance au centre de l'isochrone on peut penser que les polygones seront plus souvent adjacent et donc qu'on pourra aisément les faire fusionner entre eux, ce qui minimisera le nombre de polygone. 
+\paragraph{} On observe que le nombre de polygones augmente très rapidement. Maintenant si on pense à trier les cercles en fonction de la distance qui les sépare du centre de l'isochrone, en prennant d'abord en compte les cercles les plus proches du centre, on peut supposer que les polygones seront plus souvent adjacents et donc qu'on pourra aisément les faire fusionner entre eux, ce qui minimisera leur nombre. 
 
-\paragraph{} Lorsqu'on trie les points d'arrêts du plus proche du centre au plus éloigné du centre on obtient la courbe suivante :
+\paragraph{} Lorsqu'on trie les points d'arrêts en fonction de leur proximité avec le point de départ de l'isochrone on obtient la courbe suivante :
 
 \begin{figure}[H]
 	\begin{center}
@@ -854,37 +854,39 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
+\paragraph{} Le nombre de polygones n'augmente qu'à partir des dernières itérations, ce qui minimise considérablement les calculs fait pendant les itérations précédentes et contribue à améliorer les temps de calcul dans Kraken.
+
 \subsection{Echantillonnage}
 
-\paragraph{} Nous l'avons vu, le calcul des coordonnées d'un cercle sur une sphère demande de nombreux calculs faisant appel à des fonction trigonométriques. Or ces fonctions sont coûteuse il faut donc les appelé un minimum de fois. Pour celà il est judicieux d'éxploiter les nombreuses symétrie du cercles. En effet on peut calculer toutes les coordonnées d'un quart de cercle puis exploiter les symétrie afin de reconstruire le cercle en entier. Cette opération est d'autant plus facile que ces symétries sont les mêmes qu'en géométrie euclidienne.
+\paragraph{} Nous l'avons vu, le calcul des coordonnées d'un cercle sur une sphère est fastidieux et fait appel à des fonctions trigonométriques. Or ces fonctions sont coûteuses en temps, il faut donc les appeler un minimum de fois. Pour celà il est judicieux d'exploiter les nombreuses symétries du cercles. En effet on peut calculer toutes les coordonnées d'un quart de cercle puis utiliser ses symétries par rapport à l'axe des abscisses et des ordonnées d'un repère polaire afin de reconstruire le cercle en entier. Cette opération est d'autant plus facile que ces symétries sont les mêmes qu'en géométrie euclidienne. Cette méthode permet de ne plus appeler les fonctions construisant un point d'un cercle qu'une fois là où elles étaient auparavant appelées quatre fois.
 
-\paragraph{} Nous avons déjà vu que les cercles que nous tracions étaient en réalité des cercles échantillonés. Initialement ces polygones possédaient 360 points. En divisant ce nombre par deux, on réduite par deux les nombre d'appel au fonction trigonométrique ce qui permet d'améliorer le temps de réponse de l'API.
+\paragraph{} D'autre part, nous avons déjà vu que les cercles que nous tracions étaient en réalité des cercles échantillonés. Initialement ces polygones possédaient 360 points. En divisant ce nombre par deux, on réduit par deux les nombre d'appel au fonctions trigonométriques utilisées ce qui permet là encore d'améliorer le temps de réponse de l'API.
 
 \paragraph{} Après toutes les optimisations que nous venons de décrire nous pouvons tracer la courbe bleue qui représente les nouveaux temps de réponse :
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=400pt]{image/nvx_tmps}
+		\includegraphics[width=300pt]{image/nvx_tmps}
 		\caption{En rouge: temps de réponse avant trie et rééchantillonage, en bleu : temps de réponse après}
 		\label{Temps de réponse après tri et rééchantillonnage}
 	\end{center}
 \end{figure}
 
-\paragraph{} D'autre part le rééchantillonage des polygones a également permit de réduire de moitié la taille des flux que l'API donnait en réponse.
+\paragraph{} Enfin le rééchantillonage des polygones a également permit de réduire de moitié la taille des flux que l'API isochrones donnait en réponse.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=400pt]{image/taille_flux}
+		\includegraphics[width=300pt]{image/taille_flux}
 		\caption{En rouge: taille du flux avant trie et rééchantillonage, en bleu : taille du flux après}
 		\label{Taille du flux après tri et rééchantillonnage}
 	\end{center}
 \end{figure}
 
-\paragraph{} Dans l'API heat\_maps la taille de la grille utilisée est également importante et pour que le temps de calcul n'excède pas $10$ secondes le nombre de pixel sur une ligne ne peux pas dépasser $1000$.
+\paragraph{} Dans l'API heat\_maps la taille de la grille utilisée influe également sur le temps de calcul et la taille du flux de sortie. Pour que le temps de calcul n'excède pas $10$ secondes le nombre de pixels sur une ligne de la grille qui divise la zne d'étude ne peux pas dépasser $1000$.
 
 \subsection{Distance et projection}
 
-\paragraph{} Les fonctions trigonométriques sont des fonctions qui demande un temps de calcule important, il est donc capitale de les utiliser le moins possible si on veut améliorer le temps de calcul. Cependant pour les APIs isochrones et heat\_maps nous avons souvent besoin d'utiliser des fonction permettant d'évaluer des distances entre deux points d'une sphère. Pour cela on utilise la formule d'Haversine :
+\paragraph{} Les fonctions trigonométriques sont des fonctions qui demande un temps de calcul important, il est donc capitale de les utiliser le moins possible si on veut améliorer le temps de calcul. Cependant pour les APIs isochrones et heat\_maps nous avons souvent besoin d'utiliser des fonctions permettant d'évaluer des distances entre deux points d'une sphère. Pour cela on utilise la formule d'Haversine :
 
 \begin{align}
 	d &= 2r\arcsin\left(\sqrt{\sin^2\left(\frac{\theta_{2} - \theta_{1}}{2}\right)+\cos\theta_{1}\cos\theta_{2}\sin^2\left(\frac{\lambda_{2} - \lambda_{1}}{2}\right)}\right)
@@ -892,13 +894,13 @@ initialiser Dijksta\_multi\_start \;
 
 \paragraph{} Où d est la distance entre les deux points de coordonnées ($\theta_{1}$, $\lambda_{1}$) et ($\theta_{2}$, $\lambda_{2}$).
 
-\paragraph{} Cette formule comporte ce nombreuse fonction trigonométrique. Or dans la majorité de l'algorithme, ce n'est pas la distance en elle même qui importe mais la possibilité de comparer deux distances entre elles. De plus sur des distances de l'ordre d'une centaine de kilomètre le biais introduit par la courbure de la Terre peut être négligé. On utilise alors une autre formule pour calculer les distances.
+\paragraph{} Cette formule comporte ce nombreuses fonctions trigonométriques. Or dans la majorité de l'algorithme, ce n'est pas la distance en elle-même qui importe mais la possibilité de comparer deux distances entre elles. De plus sur des distances inférieures à une centaine de kilomètre le biais introduit par la courbure de la Terre peut être négligé. On utilise alors une autre formule pour calculer les distances.
 
 \begin{align}
-	d &= \left(\sqrt{r^2\left(\theta_{2} - \theta_{1}\right)+\left(\lambda_{2} - \lambda_{1}\right)\cos\theta_{1}}\right)
+	d &= \sqrt{r^2\left(\theta_{2} - \theta_{1}\right)+\left(\lambda_{2} - \lambda_{1}\right)\cos\theta_{1}}
 \end{align}
 
-\paragraph{} Cette nouvelle fonction permettant de calculer les distances est utilisée dans l'API isochrones afin de calculer le rayon des cercles à tracer autour des points d'arrêt. Elle est aussi utilisée dans l'API heat\_maps où elle permet de projeté les centre des pixels de la grille d'échantillonnage sur les arcs du graph du filaire de voierie. Dans les deux cas cette formule abaisse significativement le temps de calcul dans Kraken. 
+\paragraph{} Cette nouvelle fonction permettant de calculer les distances est utilisée dans l'API isochrones afin d'ordonner les points d'arrêts et de calculer le rayon des cercles à tracer autour d'eux. Elle est aussi utilisée dans l'API heat\_maps où elle permet de projeter les centre des pixels de la grille d'échantillonnage sur les arcs du graphe du filaire de voierie. Dans les deux cas cette formule abaisse significativement le temps de calcul dans Kraken. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -908,15 +910,15 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{} Le temps de réponse moyen de l'API isochrones pour un isochrone partant de châtelet à 8h00 est de $0.39$ secondes.  Pour l'API heat\_maps le temps moyen de calcul est de $3$ secondes. On a donc éstimer que les deux APIs pouvaient passer en production.
+\paragraph{} Le temps de réponse moyen de l'API isochrones pour un isochrone partant de châtelet à 8h00 est de $0.39$ secondes.  Pour l'API heat\_maps le temps moyen de calcul est de $3$ secondes. On a donc estimer que les deux APIs pouvaient passer en production.
 
 \section{La visualisation}
 
-\paragraph{} Même si mon stage consistait à retourner des flux json, il était essentiel de pouvoir visualiser ces flux affin de corriger les bugs. Dans un premier temps j'ai utilisé qgis en redirigeant les flux json renvoyé dans l'API dans un fichier .txt que je modifiais à la main afin d'en extraire la partie affichable. Mais cette solution était peu satisaisante, ne fonctionnait pas simplement avec l'API heat\_maps et était trop coûteuse en temps. J'ai donc utilisé deux outils internes de Kisio Digital dans lesquels j'ai codé en javascript des appels aux API isochrones et heat\_maps. Cette partie présentera le fonctionnement des deux interface homme machine (IHM) utilisées.
+\paragraph{} Même si mon stage consistait à retourner des flux json, il était essentiel de pouvoir visualiser ces flux afin de corriger les bugs. Dans un premier temps j'ai utilisé le logiciel qgis en redirigeant les flux json renvoyés par l'API dans un fichier .txt. Je modifiais ensuite ce fichier à la main afin d'en extraire la partie affichable. Mais cette solution était peu satisaisante, ne fonctionnait pas simplement avec l'API heat\_maps et était trop coûteuse en temps. J'ai donc utilisé deux outils internes de Kisio Digital dans lesquels j'ai codé en javascript des appels aux API isochrones et heat\_maps. Cette partie présentera le fonctionnement des deux interfaces homme machine (IHM) utilisées.
 
 \subsection{Navitia Explorer}
 
-\paragraph{} \emph{Navitia Explorer} est l'IHM qui a été utilisée jusqu'en juin 2016 par les dévelopeur de Kisio Digital. Développé par le pôle data elle permet de visualiser simplement les réponses de Navitia. Son code est disponnible sur \color{blue} https://github.com/CanalTP/navitia-explorer\color{black}. Cette IHM présente les réponses de Navitia sous forme de cartes, de liste et de tableau afin d'être facilement lisible.
+\paragraph{} \emph{Navitia Explorer} est l'IHM qui a été utilisée jusqu'en juin 2016 par les dévelopeurs de Kisio Digital. Développée par le pôle data elle permet de visualiser simplement les réponses de Navitia. Son code est disponnible sur \color{blue} https://github.com/CanalTP/navitia-explorer\color{black}. Cette IHM présente les réponses de Navitia sous forme de cartes, de liste et de tableau afin d'être facilement lisibles.
 
 \begin{figure}[H]
 	\begin{center}
@@ -936,12 +938,12 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{} L'appel à l'API heat\_maps n'a pas été codé dans navita explorer car cette API a été codée après juin 2016. En effet à cette période les déveloper ont commencé à utiliser une nouvelle IHM : Navitia playground.
+\paragraph{} L'appel à l'API heat\_maps n'a pas été codé dans navita explorer car cette API a été codée après juin 2016. En effet à cette période les dévelopeurs ont commencé à utiliser une nouvelle IHM : Navitia playground.
 
 
 \subsection{Navitia Playground}
 
-\paragraph{} En mai, Kisio Digital a monté une équipe afin d'implémenter une nouvelle IHM permettant de se familiariser avec le fonctionnement de Navitia. Cette équipe à coder en un mois \emph{Navitia playground} dont le code est disponnile sur \color{blue} https://github.com/CanalTP/navitia-playground \color{black}. Contrairement à \emph{Navitia explorer}, cette IHM n'est pas composé de plusieurs onglets. 
+\paragraph{} En mai, Kisio Digital a monté une équipe afin d'implémenter une nouvelle IHM permettant de se familiariser avec le fonctionnement de Navitia. Cette équipe à coder en un mois \emph{Navitia playground} dont le code est disponible sur \color{blue} https://github.com/CanalTP/navitia-playground \color{black}. Contrairement à \emph{Navitia explorer}, cette IHM n'est pas composée de plusieurs onglets. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -951,7 +953,7 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{} \emph{Navitia playground} permet de voir l'URL qui est utilisée pour interrogé Navitia, de plus on a facilement accès au flux json renvoyé par l'API. Cela permet de comprendre plus facilement le fonctionnement du logiciel. De plus le fait d'avoir à la fois le flux json et les informations affichées sous forme de carte permet d'être plus efficace quant à la recherche de bug.
+\paragraph{} \emph{Navitia playground} permet de voir l'URL qui est utilisée pour interroger Navitia, de plus on a facilement accès au flux json renvoyé par l'API. Cela permet de comprendre plus facilement le fonctionnement du logiciel. En outre le fait d'avoir à la fois le flux json et les informations affichées sous forme de carte permet d'être plus efficace quant à la recherche de bug.
 
 \paragraph{} Quelque soit l'API requétée \emph{Navitia playground} n'a qu'une seule interface qui génère une URL en fonction des paramètres rentrés via l'interface graphique.
 
@@ -993,7 +995,7 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{}L'API heat\_maps est aussi affichable dans Navitia playground, cependant si la résolution est trop importante, c'est à dire si la grille utilisée pour découper l'éspace possède trop de pixels, alors Navitia playground ne parvient pas à afficher la heat\_maps car il y a trop de géométrie à afficher.
+\paragraph{}L'API heat\_maps est aussi affichable dans Navitia playground, cependant si la résolution est trop importante, c'est à dire si la grille utilisée pour découper l'espace possède trop de pixels, alors Navitia playground ne parvient pas à afficher la heat\_maps car il y a trop de géométries différentes à afficher.
 
 \begin{figure}[H]
 	\begin{center}
@@ -1006,7 +1008,7 @@ initialiser Dijksta\_multi\_start \;
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
-\paragraph{} Ce stage à permis d'implémenter deux APIs dans le logiciel Navitia. Ces deux APIs permettent de représenter des isochrones de façon différentes afin de s'adapter au différents usages qui peuvent en être fait. Ces APIs permettent d'avoir des outils cartographiques afin de mieux apréhender l'accessibilité au sein des villes en prenant en compte les transport en commun. Le tableau ci-dessous résume les différences entre ces deux APIs\\
+\paragraph{} Ce stage à permis d'implémenter deux APIs dans le logiciel Navitia. Ces deux APIs permettent de représenter des isochrones de façon différentes afin de s'adapter au différents usages qui peuvent en être fait. Ces APIs permettent d'avoir des outils cartographiques afin de mieux apréhender l'accessibilité au sein des villes en prenant en compte les transports en commun. Le tableau ci-dessous résume les différences entre ces deux APIs\\
 
 \begin{center}
   \begin{tabular} {|l|c|c|}
@@ -1021,7 +1023,7 @@ initialiser Dijksta\_multi\_start \;
   \hline
   Facilement utilisable pour faire des filtres & ++ & + \\
   \hline
-   Précision des temps d'acces & + & ++ \\
+   Précision des temps d'accès & + & ++ \\
   \hline
   Prend en compte la voierie à l'arrivée & -- & ++ \\
   \hline
@@ -1030,13 +1032,13 @@ initialiser Dijksta\_multi\_start \;
   \end{tabular}
 \end{center}
 
-\paragraph{} Grâce à ce stage, j'ai pu découvrir le travail dans une entreprise d'informatique. Il était particulièrement interessant d'assister au changement de méthode de management qui ont eu lieu au cours de mon stage. Celà m'a permis de me familiariser avec la méthode agile et d'être plus à l'aise au sein d'une équipe.
+\paragraph{} Grâce à ce stage, j'ai pu découvrir le travail dans une entreprise d'informatique. Il était particulièrement intéressant d'assister au changement de méthode de management qui ont eu lieu au cours de mon stage avec l'arrivée des feature teams. Cela m'a permis de me familiariser avec la méthode agile et d'être plus à l'aise au sein d'une équipe.
 
 \paragraph{} J'ai également acquis des compétences techniques au cours de ce stage. J'ai apris comment développer une API, mais aussi comment la tester et comment optimiser ses performances. De plus j'ai grandement améliorer mes connaissances dans plusieurs langages informatiques comme le C++ et le python.
 
-\paragraph{} Enfin j'ai beaucoup apprécier de travailler sur les systèmes d'informations voyageurs. Les problématiques qui y sont soulevées m'ont motivées car elles mèlent à la fois des challenges techniques mais aussi des aspects plus liés à l'utilisateur. Ce qui ne va pas sans me rappeler l'objectif de l'option urbaniSTIC. 
+\paragraph{} Enfin j'ai beaucoup apprécié de travailler sur les systèmes d'information voyageurs. Les problématiques qui y sont soulevées m'ont motivées car elles mèlent à la fois des challenges techniques mais aussi des aspects plus liés à l'utilisateur. Ce qui ne va pas sans me rappeler les objectifs de l'option urbaniSTIC. 
 
-\paragraph{} Ce stage m'a conforté dans l'idée que je voulais continuer à approfondir mes connaissances en informatique au cours de mes études. J'ai beaucoup aimé travailler dans une équipe de recherche opérationnelle et j'aimerai continuer sur cette voie en faisant des études me permettant de faire de la recherche.
+\paragraph{} Ce stage m'a également conforté dans l'idée que je voulais continuer à approfondir mes connaissances en informatique au cours de mes études. J'ai beaucoup aimé travailler dans une équipe de recherche opérationnelle et j'aimerais continuer sur cette voie en faisant des études me permettant de faire de la recherche.
 
 \appendix
 \listoffigures

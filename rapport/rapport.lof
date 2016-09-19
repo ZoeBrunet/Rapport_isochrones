@@ -11,7 +11,7 @@
 \contentsline {figure}{\numberline {II.2}{\ignorespaces Isochrone \IeC {\`a} 00h30}}{10}
 \contentsline {figure}{\numberline {II.3}{\ignorespaces Isochrone vectoriel}}{11}
 \contentsline {figure}{\numberline {II.4}{\ignorespaces Heat map}}{11}
-\contentsline {figure}{\numberline {II.5}{\ignorespaces Cercles autour des points d'arr\IeC {\^e}t}}{13}
+\contentsline {figure}{\numberline {II.5}{\ignorespaces Cercles autour des points d'arr\IeC {\^e}ts}}{13}
 \contentsline {figure}{\numberline {II.6}{\ignorespaces Multipolygone obtenu apr\IeC {\`e}s fusion des cercles}}{14}
 \contentsline {figure}{\numberline {II.7}{\ignorespaces Multiisochrone}}{14}
 \contentsline {figure}{\numberline {II.8}{\ignorespaces Isochrone entre deux dur\IeC {\'e}es}}{15}
@@ -26,8 +26,8 @@
 \contentsline {figure}{\numberline {II.17}{\ignorespaces Cercle \IeC {\`a} la surface d'une sphere}}{21}
 \contentsline {figure}{\numberline {II.18}{\ignorespaces Relation rayon ouverture d'angle}}{21}
 \contentsline {figure}{\numberline {II.19}{\ignorespaces Interface de google CPU profiler}}{22}
-\contentsline {figure}{\numberline {II.20}{\ignorespaces Profile de temps de r\IeC {\'e}ponse avant optimisation}}{23}
-\contentsline {figure}{\numberline {II.21}{\ignorespaces Nombre de polygonnes pour un ordre al\IeC {\'e}atoire}}{24}
+\contentsline {figure}{\numberline {II.20}{\ignorespaces Profile de temps de r\IeC {\'e}ponse avant optimisation pour l'API isochrones}}{23}
+\contentsline {figure}{\numberline {II.21}{\ignorespaces Nombre de polygones pour un ordre al\IeC {\'e}atoire}}{24}
 \contentsline {figure}{\numberline {II.22}{\ignorespaces Nombre de polygonnes lorsqu'on ordonne les points d'arr\IeC {\^e}ts}}{24}
 \contentsline {figure}{\numberline {II.23}{\ignorespaces En rouge: temps de r\IeC {\'e}ponse avant trie et r\IeC {\'e}\IeC {\'e}chantillonage, en bleu : temps de r\IeC {\'e}ponse apr\IeC {\`e}s}}{25}
 \contentsline {figure}{\numberline {II.24}{\ignorespaces En rouge: taille du flux avant trie et r\IeC {\'e}\IeC {\'e}chantillonage, en bleu : taille du flux apr\IeC {\`e}s}}{25}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  18 SEP 2016 19:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  19 SEP 2016 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,84 +1055,84 @@ File: image/nb_poly_ap_opt.png Graphic file (type png)
 <use image/nb_poly_ap_opt.png>
 Package pdftex.def Info: image/nb_poly_ap_opt.png used on input line 851.
 (pdftex.def)             Requested size: 400.0pt x 203.56943pt.
-
-<image/nvx_tmps.png, id=146, 1198.4775pt x 797.98125pt>
+ [24 <./image/nb_poly_avt_opt.png> <./image/nb_poly_ap_opt.png>] <image/nvx_tmp
+s.png, id=152, 1198.4775pt x 797.98125pt>
 File: image/nvx_tmps.png Graphic file (type png)
 
 <use image/nvx_tmps.png>
-Package pdftex.def Info: image/nvx_tmps.png used on input line 867.
-(pdftex.def)             Requested size: 400.0pt x 266.32997pt.
- [24 <./image/nb_poly_avt_opt.png> <./image/nb_poly_ap_opt.png>] <image/taille_
-flux.png, id=153, 1198.4775pt x 700.6175pt>
+Package pdftex.def Info: image/nvx_tmps.png used on input line 869.
+(pdftex.def)             Requested size: 300.0pt x 199.73834pt.
+
+<image/taille_flux.png, id=153, 1198.4775pt x 700.6175pt>
 File: image/taille_flux.png Graphic file (type png)
 
 <use image/taille_flux.png>
-Package pdftex.def Info: image/taille_flux.png used on input line 877.
-(pdftex.def)             Requested size: 400.0pt x 233.83437pt.
+Package pdftex.def Info: image/taille_flux.png used on input line 879.
+(pdftex.def)             Requested size: 300.0pt x 175.36775pt.
  [25 <./image/nvx_tmps.png> <./image/taille_flux.png>] <image/derniere_opt.png,
  id=159, 1158.3275pt x 757.83125pt>
 File: image/derniere_opt.png Graphic file (type png)
 
 <use image/derniere_opt.png>
-Package pdftex.def Info: image/derniere_opt.png used on input line 905.
+Package pdftex.def Info: image/derniere_opt.png used on input line 907.
 (pdftex.def)             Requested size: 400.0pt x 261.6949pt.
  [26 <./image/derniere_opt.png>]
 <image/navexplo_2.png, id=164, 932.48375pt x 540.0175pt>
 File: image/navexplo_2.png Graphic file (type png)
 
 <use image/navexplo_2.png>
-Package pdftex.def Info: image/navexplo_2.png used on input line 923.
+Package pdftex.def Info: image/navexplo_2.png used on input line 925.
 (pdftex.def)             Requested size: 400.0pt x 231.64267pt.
 
 <image/navexplo_iso.png, id=165, 1737.49126pt x 857.2025pt>
 File: image/navexplo_iso.png Graphic file (type png)
 
 <use image/navexplo_iso.png>
-Package pdftex.def Info: image/navexplo_iso.png used on input line 933.
+Package pdftex.def Info: image/navexplo_iso.png used on input line 935.
 (pdftex.def)             Requested size: 400.0pt x 197.33554pt.
  [27 <./image/navexplo_2.png> <./image/navexplo_iso.png>] <image/playground_1.p
 ng, id=171, 1896.08376pt x 798.985pt>
 File: image/playground_1.png Graphic file (type png)
 
 <use image/playground_1.png>
-Package pdftex.def Info: image/playground_1.png used on input line 948.
+Package pdftex.def Info: image/playground_1.png used on input line 950.
 (pdftex.def)             Requested size: 400.0pt x 168.54767pt.
 
 <image/playground_2.png, id=172, 1283.79625pt x 829.0975pt>
 File: image/playground_2.png Graphic file (type png)
 
 <use image/playground_2.png>
-Package pdftex.def Info: image/playground_2.png used on input line 960.
+Package pdftex.def Info: image/playground_2.png used on input line 962.
 (pdftex.def)             Requested size: 400.0pt x 258.32062pt.
  [28 <./image/playground_1.png> <./image/playground_2.png>] <image/n_p_flux_jso
 n.png, id=177, 1665.22125pt x 846.16125pt>
 File: image/n_p_flux_json.png Graphic file (type png)
 
 <use image/n_p_flux_json.png>
-Package pdftex.def Info: image/n_p_flux_json.png used on input line 972.
+Package pdftex.def Info: image/n_p_flux_json.png used on input line 974.
 (pdftex.def)             Requested size: 400.0pt x 203.2507pt.
 
 <image/n_p_iso.png, id=178, 1701.35625pt x 853.1875pt>
 File: image/n_p_iso.png Graphic file (type png)
  <use image/n_p_iso.png>
-Package pdftex.def Info: image/n_p_iso.png used on input line 982.
+Package pdftex.def Info: image/n_p_iso.png used on input line 984.
 (pdftex.def)             Requested size: 400.0pt x 200.59023pt.
 
 <image/n_p_isochrone.png, id=179, 1678.27pt x 855.195pt>
 File: image/n_p_isochrone.png Graphic file (type png)
 
 <use image/n_p_isochrone.png>
-Package pdftex.def Info: image/n_p_isochrone.png used on input line 990.
+Package pdftex.def Info: image/n_p_isochrone.png used on input line 992.
 (pdftex.def)             Requested size: 400.0pt x 203.82863pt.
  [29 <./image/n_p_flux_json.png> <./image/n_p_iso.png>] <image/n_p_heat_map.png
 , id=185, 1724.4425pt x 860.21375pt>
 File: image/n_p_heat_map.png Graphic file (type png)
 
 <use image/n_p_heat_map.png>
-Package pdftex.def Info: image/n_p_heat_map.png used on input line 1000.
+Package pdftex.def Info: image/n_p_heat_map.png used on input line 1002.
 (pdftex.def)             Requested size: 400.0pt x 199.5251pt.
  [30 <./image/n_p_isochrone.png> <./image/n_p_heat_map.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
 
  []
 
@@ -1149,7 +1149,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
  8010 strings out of 493304
- 109253 string characters out of 6139871
+ 109275 string characters out of 6139871
  264074 words of memory out of 5000000
  11302 multiletter control sequences out of 15000+600000
  16988 words of font info for 34 fonts, out of 8000000 for 9000
@@ -1175,7 +1175,7 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sftt1000.pfb>
-Output written on rapport.pdf (34 pages, 17150182 bytes).
+Output written on rapport.pdf (34 pages, 17150800 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  147 compressed objects within 2 object streams

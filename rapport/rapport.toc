@@ -89,7 +89,7 @@
 \contentsline {subsubsection}{Tracer un cercle \IeC {\`a} la surface d'une sph\IeC {\`e}re}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{20}
-\contentsline {subsection}{\numberline {II.2.3}R\IeC {\'e}solution math\IeC {\'e}matique}{20}
+\contentsline {subsection}{\numberline {II.2.3}R\IeC {\'e}solution math\IeC {\'e}matiques}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{21}
@@ -110,9 +110,10 @@
 \contentsline {paragraph}{}{23}
 \contentsline {paragraph}{}{24}
 \contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
 \contentsline {subsection}{\numberline {II.3.3}Echantillonnage}{24}
 \contentsline {paragraph}{}{24}
-\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{25}
 \contentsline {paragraph}{}{25}
 \contentsline {paragraph}{}{25}
 \contentsline {paragraph}{}{25}
@@ -127,12 +128,12 @@
 \contentsline {subsection}{\numberline {II.4.1}Navitia Explorer}{27}
 \contentsline {paragraph}{}{27}
 \contentsline {paragraph}{}{27}
-\contentsline {paragraph}{}{27}
+\contentsline {paragraph}{}{28}
 \contentsline {subsection}{\numberline {II.4.2}Navitia Playground}{28}
 \contentsline {paragraph}{}{28}
 \contentsline {paragraph}{}{28}
 \contentsline {paragraph}{}{28}
-\contentsline {paragraph}{}{28}
+\contentsline {paragraph}{}{29}
 \contentsline {paragraph}{}{29}
 \contentsline {paragraph}{}{29}
 \contentsline {paragraph}{}{30}
