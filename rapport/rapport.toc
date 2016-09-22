@@ -11,35 +11,37 @@
 \contentsline {paragraph}{}{3}
 \contentsline {chapter}{\numberline {I}Contexte du stage}{4}
 \contentsline {section}{\numberline {I.1}Pr\IeC {\'e}sentation de Kisio Digital}{4}
-\contentsline {subsection}{\numberline {I.1.1}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}ral}{4}
-\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {I.1.1}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale}{4}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{5}
-\contentsline {subsection}{\numberline {I.1.2}La m\IeC {\'e}thode agile}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {subsection}{\numberline {I.1.2}L'information voyageur}{5}
 \contentsline {paragraph}{}{5}
 \contentsline {paragraph}{}{5}
-\contentsline {paragraph}{Organisation au sein d'une \IeC {\'e}quipe}{5}
-\contentsline {paragraph}{Feature team}{5}
-\contentsline {subsection}{\numberline {I.1.3}L'information voyageur}{6}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{6}
+\contentsline {subsection}{\numberline {I.1.3}Organisation de l'\IeC {\'e}quipe}{6}
 \contentsline {paragraph}{}{6}
 \contentsline {paragraph}{}{6}
 \contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{Organisation au sein d'une \IeC {\'e}quipe}{6}
+\contentsline {paragraph}{Feature team}{7}
 \contentsline {section}{\numberline {I.2}Navitia une API open source}{7}
 \contentsline {paragraph}{}{7}
 \contentsline {subsection}{\numberline {I.2.1}Les API}{7}
 \contentsline {paragraph}{}{7}
-\contentsline {paragraph}{}{7}
-\contentsline {subsection}{\numberline {I.2.2}L'open source, l'open data et l'open service}{7}
-\contentsline {paragraph}{}{7}
-\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{8}
+\contentsline {subsection}{\numberline {I.2.2}L'open source, l'open data et l'open service}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
 \contentsline {paragraph}{}{8}
 \contentsline {subsection}{\numberline {I.2.3}Le logiciel Navitia}{8}
 \contentsline {paragraph}{}{8}
 \contentsline {paragraph}{}{8}
-\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{9}
 \contentsline {section}{\numberline {I.3}Pr\IeC {\'e}sentation du stage}{9}
 \contentsline {paragraph}{}{9}
 \contentsline {chapter}{\numberline {II}D\IeC {\'e}roulement du stage}{10}
@@ -89,7 +91,7 @@
 \contentsline {subsubsection}{Tracer un cercle \IeC {\`a} la surface d'une sph\IeC {\`e}re}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{20}
-\contentsline {subsection}{\numberline {II.2.3}R\IeC {\'e}solution math\IeC {\'e}matiques}{20}
+\contentsline {subsection}{\numberline {II.2.3}R\IeC {\'e}solutions math\IeC {\'e}matiques}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{21}
@@ -105,7 +107,7 @@
 \contentsline {paragraph}{}{22}
 \contentsline {paragraph}{}{23}
 \contentsline {paragraph}{}{23}
-\contentsline {subsection}{\numberline {II.3.2}Influence du trie}{23}
+\contentsline {subsection}{\numberline {II.3.2}Influence du tri}{23}
 \contentsline {paragraph}{}{23}
 \contentsline {paragraph}{}{23}
 \contentsline {paragraph}{}{24}
@@ -143,5 +145,6 @@
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{31}
-\contentsline {chapter}{Table des figures}{32}
-\contentsline {chapter}{Bibliographie}{33}
+\contentsline {chapter}{Glossaire}{32}
+\contentsline {chapter}{Table des figures}{33}
+\contentsline {chapter}{Bibliographie}{34}

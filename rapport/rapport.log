@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  19 SEP 2016 14:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.28)  22 SEP 2016 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,30 +525,204 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count123
 \algocf@algoframe=\box39
 \algocf@algobox=\box40
-) (./rapport.aux)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2014/01/20 v4.03 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
+\XKV@depth=\count124
+File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/mfirstuc.sty
+Package: mfirstuc 2013/11/04 v1.08 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count125
+)
+\etb@tempcnta=\count126
+)
+\@glsmfirst=\toks31
+\@glsmrest=\toks32
+)
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2013/09/06 v2.18 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count127
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2013/08/29 v2.17 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count128
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count129
+\FP@xia=\count130
+\FP@xib=\count131
+\FP@xfa=\count132
+\FP@xfb=\count133
+\FP@rega=\count134
+\FP@regb=\count135
+\FP@regs=\count136
+\FP@times=\count137
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks33
+\@dtl@tmpcount=\count139
+\dtl@tmplength=\skip72
+\dtl@sortresult=\count140
+\@dtl@numgrpsepcount=\count141
+\@dtl@datatype=\count142
+\dtl@codeA=\count143
+\dtl@codeB=\count144
+\@dtl@foreach@level=\count145
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty
+Package: glossaries-compatible-307 2013/11/14 v4.0 (NLCT)
+) (/usr/share/texmf/tex/latex/beamer/base/translator/translator.sty
+Package: translator 2010/06/12 ver 1.10
+
+(/usr/share/texmf/tex/latex/beamer/base/translator/translator-language-mappings
+.tex))
+\gls@level=\count146
+\@gls@tmpb=\toks34
+\gls@tmplen=\skip73
+\glswrite=\write3
+\glskeylisttok=\toks35
+\glslabeltok=\toks36
+\glsshorttok=\toks37
+\glslongtok=\toks38
+
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y
+Package: glossary-hypernav 2013/11/14 v4.0 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2013/11/14 v4.0 (NLCT)
+\glslistdottedwidth=\skip74
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2013/11/14 v4.0 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip75
+\LTright=\skip76
+\LTpre=\skip77
+\LTpost=\skip78
+\LTchunksize=\count147
+\LTcapwidth=\dimen139
+\LT@head=\box41
+\LT@firsthead=\box42
+\LT@foot=\box43
+\LT@lastfoot=\box44
+\LT@cols=\count148
+\LT@rows=\count149
+\c@LT@tables=\count150
+\c@LT@chunks=\count151
+\LT@p@ftn=\toks39
+)
+\glsdescwidth=\skip79
+\glspagelistwidth=\skip80
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+Package: glossary-super 2013/11/14 v4.0 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count152
+\ST@wd=\dimen140
+\ST@rightskip=\skip81
+\ST@leftskip=\skip82
+\ST@parfillskip=\skip83
+\ST@pageleft=\dimen141
+\ST@headht=\dimen142
+\ST@tailht=\dimen143
+\ST@pagesofar=\dimen144
+\ST@pboxht=\dimen145
+\ST@lineht=\dimen146
+\ST@stretchht=\dimen147
+\ST@prevht=\dimen148
+\ST@toadd=\dimen149
+\ST@dimen=\dimen150
+\ST@pbox=\box45
+))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2013/11/14 v4.0 (NLCT)
+\glstreeindent=\skip84
+))
+(./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Info: Redefining \degres on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Info: Redefining \degres on input line 55.
 
 
 Package frenchb.ldf Warning: The definition of \@makecaption has been changed,
 (frenchb.ldf)                frenchb will NOT customise it;
-(frenchb.ldf)                reported on input line 53.
+(frenchb.ldf)                reported on input line 55.
 
-LaTeX Info: Redefining \dots on input line 53.
-LaTeX Info: Redefining \up on input line 53.
+LaTeX Info: Redefining \dots on input line 55.
+LaTeX Info: Redefining \up on input line 55.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -585,17 +759,17 @@ LaTeX Info: Redefining \up on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen139
-\scratchbox=\box41
-\nofMPsegments=\count125
-\nofMParguments=\count126
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen140
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count153
+\scratchdimen=\dimen151
+\scratchbox=\box46
+\nofMPsegments=\count154
+\nofMParguments=\count155
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count156
+\MPscratchDim=\dimen152
+\MPnumerator=\count157
+\makeMPintoPDFobject=\count158
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -640,33 +814,37 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count130
+\c@lstlisting=\count159
 
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/dict/glossaries-dictionary-
+English.dict
+Dictionary: glossaries-dictionary, Language: English 
+) (./rapport.glsdefs)
 <image/logo_centrale_nantes.jpg, id=1, 608.2725pt x 702.625pt>
 File: image/logo_centrale_nantes.jpg Graphic file (type jpg)
 
 <use image/logo_centrale_nantes.jpg>
-Package pdftex.def Info: image/logo_centrale_nantes.jpg used on input line 59.
+Package pdftex.def Info: image/logo_centrale_nantes.jpg used on input line 61.
 (pdftex.def)             Requested size: 85.35826pt x 98.59196pt.
 
 <image/logo_kisio.png, id=2, 963.6pt x 378.41376pt>
 File: image/logo_kisio.png Graphic file (type png)
  <use image/logo_kisio.png>
-Package pdftex.def Info: image/logo_kisio.png used on input line 61.
+Package pdftex.def Info: image/logo_kisio.png used on input line 63.
 (pdftex.def)             Requested size: 142.26378pt x 55.86462pt.
 
 <image/iso_garde.png, id=4, 1531.7225pt x 750.805pt>
 File: image/iso_garde.png Graphic file (type png)
  <use image/iso_garde.png>
-Package pdftex.def Info: image/iso_garde.png used on input line 70.
+Package pdftex.def Info: image/iso_garde.png used on input line 72.
 (pdftex.def)             Requested size: 483.69687pt x 237.0891pt.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./image/logo_centrale_nant
 es.jpg> <./image/logo_kisio.png> <./image/iso_garde.png>] (./rapport.toc)
-\tf@toc=\write3
-\openout3 = `rapport.toc'.
+\tf@toc=\write4
+\openout4 = `rapport.toc'.
 
 
 [1
@@ -681,68 +859,67 @@ Partie I.
 File: image/orga_kisio.png Graphic file (type png)
 
 <use image/orga_kisio.png>
-Package pdftex.def Info: image/orga_kisio.png used on input line 122.
+Package pdftex.def Info: image/orga_kisio.png used on input line 124.
 (pdftex.def)             Requested size: 500.0pt x 287.50299pt.
 
-Overfull \hbox (16.30313pt too wide) in paragraph at lines 122--123
+Overfull \hbox (16.30313pt too wide) in paragraph at lines 124--125
  [] 
  []
 
 [4
 
  <./image/orga_kisio.png>]
-<image/feature_team.png, id=37, 599.23875pt x 353.32pt>
+<image/archi_SIV.png, id=37, 993.7125pt x 670.505pt>
+File: image/archi_SIV.png Graphic file (type png)
+ <use image/archi_SIV.png>
+Package pdftex.def Info: image/archi_SIV.png used on input line 171.
+(pdftex.def)             Requested size: 300.0pt x 202.4217pt.
+
+[5] <image/feature_team.png, id=41, 599.23875pt x 353.32pt>
 File: image/feature_team.png Graphic file (type png)
 
 <use image/feature_team.png>
-Package pdftex.def Info: image/feature_team.png used on input line 157.
+Package pdftex.def Info: image/feature_team.png used on input line 194.
 (pdftex.def)             Requested size: 227.62204pt x 134.20908pt.
- [5 <./image/feature_team.png>]
-<image/archi_SIV.png, id=42, 993.7125pt x 670.505pt>
-File: image/archi_SIV.png Graphic file (type png)
- <use image/archi_SIV.png>
-Package pdftex.def Info: image/archi_SIV.png used on input line 190.
-(pdftex.def)             Requested size: 300.0pt x 202.4217pt.
-
-[6 <./image/archi_SIV.png>]
-<image/logo_navitia.png, id=47, 120.45pt x 41.9166pt>
+ [6 <./image/archi_SIV.png>]
+<image/logo_navitia.png, id=46, 120.45pt x 41.9166pt>
 File: image/logo_navitia.png Graphic file (type png)
 
 <use image/logo_navitia.png>
-Package pdftex.def Info: image/logo_navitia.png used on input line 202.
+Package pdftex.def Info: image/logo_navitia.png used on input line 207.
 (pdftex.def)             Requested size: 100.0pt x 34.80098pt.
 
-<image/API_navitia.jpg, id=48, 481.8pt x 361.35pt>
+<image/API_navitia.jpg, id=47, 481.8pt x 361.35pt>
 File: image/API_navitia.jpg Graphic file (type jpg)
  <use image/API_navitia.jpg>
-Package pdftex.def Info: image/API_navitia.jpg used on input line 211.
+Package pdftex.def Info: image/API_navitia.jpg used on input line 216.
 (pdftex.def)             Requested size: 300.0pt x 225.0051pt.
 
-[7 <./image/logo_navitia.png> <./image/API_navitia.jpg>]
-<image/historique_navitia.png, id=53, 806.26219pt x 232.61906pt>
+[7 <./image/feature_team.png> <./image/logo_navitia.png> <./image/API_navitia.j
+pg>] <image/historique_navitia.png, id=53, 806.26219pt x 232.61906pt>
 File: image/historique_navitia.png Graphic file (type png)
 
 <use image/historique_navitia.png>
-Package pdftex.def Info: image/historique_navitia.png used on input line 233.
+Package pdftex.def Info: image/historique_navitia.png used on input line 238.
 (pdftex.def)             Requested size: 400.0pt x 115.40411pt.
 
 <image/architecture_navitia.png, id=54, 1167.36125pt x 585.18625pt>
 File: image/architecture_navitia.png Graphic file (type png)
 
 <use image/architecture_navitia.png>
-Package pdftex.def Info: image/architecture_navitia.png used on input line 253.
+Package pdftex.def Info: image/architecture_navitia.png used on input line 258.
 
 (pdftex.def)             Requested size: 400.0pt x 200.51437pt.
- [8 <./image/historique_navitia.png> <./image/architecture_navitia.png (PNG cop
-y)>] [9]
+ [8 <./image/historique_navitia.png>]
+[9 <./image/architecture_navitia.png (PNG copy)>]
 Partie II.
 <image/iso_8h.png, id=63, 921.4425pt x 752.8125pt>
 File: image/iso_8h.png Graphic file (type png)
  <use image/iso_8h.png>
-Package pdftex.def Info: image/iso_8h.png used on input line 285.
+Package pdftex.def Info: image/iso_8h.png used on input line 290.
 (pdftex.def)             Requested size: 227.62204pt x 185.96269pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 285--286
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 290--291
 [][] 
  []
 
@@ -750,10 +927,10 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 285--286
 File: image/iso_00h30.png Graphic file (type png)
 
 <use image/iso_00h30.png>
-Package pdftex.def Info: image/iso_00h30.png used on input line 290.
+Package pdftex.def Info: image/iso_00h30.png used on input line 295.
 (pdftex.def)             Requested size: 227.62204pt x 184.74121pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 290--291
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 295--296
 [][] 
  []
 
@@ -764,10 +941,10 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 290--291
 File: image/iso_vect.png Graphic file (type png)
 
 <use image/iso_vect.png>
-Package pdftex.def Info: image/iso_vect.png used on input line 305.
+Package pdftex.def Info: image/iso_vect.png used on input line 310.
 (pdftex.def)             Requested size: 227.62204pt x 141.89545pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 305--306
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 310--311
 [][] 
  []
 
@@ -775,113 +952,113 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 305--306
 File: image/heat_map.png Graphic file (type png)
 
 <use image/heat_map.png>
-Package pdftex.def Info: image/heat_map.png used on input line 310.
+Package pdftex.def Info: image/heat_map.png used on input line 315.
 (pdftex.def)             Requested size: 227.62204pt x 141.07817pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 310--311
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 315--316
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--339
+Underfull \hbox (badness 10000) in paragraph at lines 344--344
 []|\T1/cmr/m/n/10 iso-date-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--341
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
 []|\T1/cmr/m/n/10 Identifiant per-me-tant d'évi-ter une
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--343
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
 []|\T1/cmr/m/n/10 tableau
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
 []|\T1/cmr/m/n/10 tableau
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
 []|\T1/cmr/m/n/10 Comme first_section_mode[] mais
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 352--352
+Underfull \hbox (badness 2717) in paragraph at lines 357--357
  [] \T1/cmr/m/it/10 Note : \T1/cmr/m/n/10 On peut rè-gler in-dé-pen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/n/10 dem-ment la du-rée maxi-male de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/n/10 ra-bat-te-ment pour chaque mode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/n/10 en uti-li-sant les pa-ra-mètres :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/it/10 max_walking_duration_to_pt\T1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/it/10 max_bike_duration_to_pt\T1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--352
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \T1/cmr/m/it/10 max_bss_duration_to_pt\T1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 362--362
+Underfull \hbox (badness 1281) in paragraph at lines 367--367
 []|\T1/cmr/m/n/10 Permet d'uti-li-ser les don-nées temps
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--362
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
 \T1/cmr/m/n/10 réel ou les don-nées théo-riques.
  []
 
 
-Underfull \hbox (badness 7168) in paragraph at lines 362--362
+Underfull \hbox (badness 7168) in paragraph at lines 367--367
 \T1/cmr/m/n/10 data_freshness peut prendre deux
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--364
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 []|\T1/cmr/m/n/10 C'est un pro-fil pré-dé-fini où les
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--364
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 \T1/cmr/m/n/10 pa-ra-mètres \T1/cmr/m/it/10 first_section_mode[]\T1/cmr/m/n/10 
 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--364
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 \T1/cmr/m/it/10 last_section_mode[]\T1/cmr/m/n/10 , \T1/cmr/m/it/10 wal-king_sp
 eed\T1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 364--364
+Underfull \hbox (badness 1072) in paragraph at lines 369--369
 \T1/cmr/m/it/10 bike_speed \T1/cmr/m/n/10 et \T1/cmr/m/it/10 bss_speed \T1/cmr/
 m/n/10 sont mo-di-
  []
 
 
-Overfull \hbox (13.46968pt too wide) in paragraph at lines 329--367
+Overfull \hbox (13.46968pt too wide) in paragraph at lines 334--372
  [] 
  []
 
@@ -890,7 +1067,7 @@ Overfull \vbox (7.53297pt too high) has occurred while \output is active []
 
 
 [12]
-Overfull \hbox (9.47066pt too wide) in paragraph at lines 370--383
+Overfull \hbox (9.47066pt too wide) in paragraph at lines 375--388
  [] 
  []
 
@@ -898,31 +1075,31 @@ Overfull \hbox (9.47066pt too wide) in paragraph at lines 370--383
 File: image/premiers_isochrones.png Graphic file (type png)
 
 <use image/premiers_isochrones.png>
-Package pdftex.def Info: image/premiers_isochrones.png used on input line 416.
+Package pdftex.def Info: image/premiers_isochrones.png used on input line 421.
 (pdftex.def)             Requested size: 400.0pt x 248.76822pt.
 
 <image/iso_merged.png, id=78, 1193.45876pt x 896.34875pt>
 File: image/iso_merged.png Graphic file (type png)
 
 <use image/iso_merged.png>
-Package pdftex.def Info: image/iso_merged.png used on input line 426.
+Package pdftex.def Info: image/iso_merged.png used on input line 431.
 (pdftex.def)             Requested size: 300.0pt x 225.31758pt.
  [13 <./image/premiers_isochrones.png>]
 <image/multi_iso.png, id=82, 1062.97125pt x 935.495pt>
 File: image/multi_iso.png Graphic file (type png)
 
 <use image/multi_iso.png>
-Package pdftex.def Info: image/multi_iso.png used on input line 436.
+Package pdftex.def Info: image/multi_iso.png used on input line 441.
 (pdftex.def)             Requested size: 300.0pt x 264.02089pt.
 
 <image/iso_min.png, id=83, 1179.40625pt x 881.2925pt>
 File: image/iso_min.png Graphic file (type png)
  <use image/iso_min.png>
-Package pdftex.def Info: image/iso_min.png used on input line 446.
+Package pdftex.def Info: image/iso_min.png used on input line 451.
 (pdftex.def)             Requested size: 300.0pt x 224.16855pt.
 
 [14 <./image/iso_merged.png> <./image/multi_iso.png>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 455.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 460.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -932,10 +1109,10 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 File: image/comp_iso_fin.png Graphic file (type png)
 
 <use image/comp_iso_fin.png>
-Package pdftex.def Info: image/comp_iso_fin.png used on input line 533.
+Package pdftex.def Info: image/comp_iso_fin.png used on input line 538.
 (pdftex.def)             Requested size: 227.62204pt x 162.16995pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 533--534
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 538--539
 [][] 
  []
 
@@ -943,10 +1120,10 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 533--534
 File: image/comp_raster_fin.png Graphic file (type png)
 
 <use image/comp_raster_fin.png>
-Package pdftex.def Info: image/comp_raster_fin.png used on input line 538.
+Package pdftex.def Info: image/comp_raster_fin.png used on input line 543.
 (pdftex.def)             Requested size: 227.62204pt x 161.87775pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 538--539
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 543--544
 [][] 
  []
 
@@ -954,10 +1131,10 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 538--539
 File: image/heatmap_basse_reso.png Graphic file (type png)
 
 <use image/heatmap_basse_reso.png>
-Package pdftex.def Info: image/heatmap_basse_reso.png used on input line 548.
+Package pdftex.def Info: image/heatmap_basse_reso.png used on input line 553.
 (pdftex.def)             Requested size: 227.62204pt x 183.07262pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 548--549
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 553--554
 [][] 
  []
 
@@ -965,41 +1142,41 @@ Overfull \hbox (5.11824pt too wide) in paragraph at lines 548--549
 File: image/heatmap_haute_reso.png Graphic file (type png)
 
 <use image/heatmap_haute_reso.png>
-Package pdftex.def Info: image/heatmap_haute_reso.png used on input line 553.
+Package pdftex.def Info: image/heatmap_haute_reso.png used on input line 558.
 (pdftex.def)             Requested size: 227.62204pt x 181.4477pt.
 
-Overfull \hbox (5.11824pt too wide) in paragraph at lines 553--554
+Overfull \hbox (5.11824pt too wide) in paragraph at lines 558--559
 [][] 
  []
 
 [16 <./image/comp_iso_fin.png> <./image/comp_raster_fin.png>] [17 <./image/heat
 map_basse_reso.png> <./image/heatmap_haute_reso.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 666--668
+Underfull \hbox (badness 10000) in paragraph at lines 671--673
 
  []
 
 <image/lat_lon.png, id=106, 240.9pt x 240.9pt>
 File: image/lat_lon.png Graphic file (type png)
  <use image/lat_lon.png>
-Package pdftex.def Info: image/lat_lon.png used on input line 688.
+Package pdftex.def Info: image/lat_lon.png used on input line 693.
 (pdftex.def)             Requested size: 113.81102pt x 113.81114pt.
  [19 <./image/lat_lon.png>] <image/grille_sphere.png, id=112, 562.1pt x 562.1pt
 >
 File: image/grille_sphere.png Graphic file (type png)
 
 <use image/grille_sphere.png>
-Package pdftex.def Info: image/grille_sphere.png used on input line 703.
+Package pdftex.def Info: image/grille_sphere.png used on input line 708.
 (pdftex.def)             Requested size: 200.0pt x 199.99718pt.
 
 <image/proj.png, id=113, 641.39626pt x 640.3925pt>
 File: image/proj.png Graphic file (type png)
  <use image/proj.png>
-Package pdftex.def Info: image/proj.png used on input line 712.
+Package pdftex.def Info: image/proj.png used on input line 717.
 (pdftex.def)             Requested size: 142.26378pt x 142.03983pt.
 
 <image/sprint2_triangles_spheriques.png, id=114, 321.2pt x 321.2pt>
@@ -1007,22 +1184,22 @@ File: image/sprint2_triangles_spheriques.png Graphic file (type png)
 
 <use image/sprint2_triangles_spheriques.png>
 Package pdftex.def Info: image/sprint2_triangles_spheriques.png used on input l
-ine 730.
+ine 735.
 (pdftex.def)             Requested size: 142.26378pt x 142.26454pt.
  [20 <./image/grille_sphere.png> <./image/proj.png>]
 <image/sprint2_petits-cercles.png, id=122, 618.31pt x 275.0275pt>
 File: image/sprint2_petits-cercles.png Graphic file (type png)
 
 <use image/sprint2_petits-cercles.png>
-Package pdftex.def Info: image/sprint2_petits-cercles.png used on input line 74
-9.
+Package pdftex.def Info: image/sprint2_petits-cercles.png used on input line 75
+4.
 (pdftex.def)             Requested size: 400.0pt x 177.92644pt.
 
 <image/relation_angle_rayon.png, id=123, 711.65875pt x 706.64pt>
 File: image/relation_angle_rayon.png Graphic file (type png)
 
 <use image/relation_angle_rayon.png>
-Package pdftex.def Info: image/relation_angle_rayon.png used on input line 760.
+Package pdftex.def Info: image/relation_angle_rayon.png used on input line 765.
 
 (pdftex.def)             Requested size: 170.71652pt x 169.5108pt.
  [21 <./image/sprint2_triangles_spheriques.png> <./image/sprint2_petits-cercles
@@ -1031,7 +1208,7 @@ fy.png, id=130, 1023.825pt x 769.87625pt>
 File: image/profile_with_simplify.png Graphic file (type png)
 
 <use image/profile_with_simplify.png>
-Package pdftex.def Info: image/profile_with_simplify.png used on input line 813
+Package pdftex.def Info: image/profile_with_simplify.png used on input line 818
 .
 (pdftex.def)             Requested size: 300.0pt x 225.58437pt.
  [22 <./image/profile_with_simplify.png>]
@@ -1039,122 +1216,133 @@ Package pdftex.def Info: image/profile_with_simplify.png used on input line 813
 File: image/avant_opt.png Graphic file (type png)
 
 <use image/avant_opt.png>
-Package pdftex.def Info: image/avant_opt.png used on input line 825.
+Package pdftex.def Info: image/avant_opt.png used on input line 830.
 (pdftex.def)             Requested size: 400.0pt x 268.37495pt.
 
 <image/nb_poly_avt_opt.png, id=140, 1007.765pt x 493.845pt>
 File: image/nb_poly_avt_opt.png Graphic file (type png)
 
 <use image/nb_poly_avt_opt.png>
-Package pdftex.def Info: image/nb_poly_avt_opt.png used on input line 839.
+Package pdftex.def Info: image/nb_poly_avt_opt.png used on input line 844.
 (pdftex.def)             Requested size: 400.0pt x 196.01233pt.
  [23 <./image/avant_opt.png>]
 <image/nb_poly_ap_opt.png, id=145, 1011.78pt x 514.92375pt>
 File: image/nb_poly_ap_opt.png Graphic file (type png)
 
 <use image/nb_poly_ap_opt.png>
-Package pdftex.def Info: image/nb_poly_ap_opt.png used on input line 851.
+Package pdftex.def Info: image/nb_poly_ap_opt.png used on input line 856.
 (pdftex.def)             Requested size: 400.0pt x 203.56943pt.
  [24 <./image/nb_poly_avt_opt.png> <./image/nb_poly_ap_opt.png>] <image/nvx_tmp
 s.png, id=152, 1198.4775pt x 797.98125pt>
 File: image/nvx_tmps.png Graphic file (type png)
 
 <use image/nvx_tmps.png>
-Package pdftex.def Info: image/nvx_tmps.png used on input line 869.
+Package pdftex.def Info: image/nvx_tmps.png used on input line 874.
 (pdftex.def)             Requested size: 300.0pt x 199.73834pt.
 
 <image/taille_flux.png, id=153, 1198.4775pt x 700.6175pt>
 File: image/taille_flux.png Graphic file (type png)
 
 <use image/taille_flux.png>
-Package pdftex.def Info: image/taille_flux.png used on input line 879.
+Package pdftex.def Info: image/taille_flux.png used on input line 884.
 (pdftex.def)             Requested size: 300.0pt x 175.36775pt.
  [25 <./image/nvx_tmps.png> <./image/taille_flux.png>] <image/derniere_opt.png,
  id=159, 1158.3275pt x 757.83125pt>
 File: image/derniere_opt.png Graphic file (type png)
 
 <use image/derniere_opt.png>
-Package pdftex.def Info: image/derniere_opt.png used on input line 907.
+Package pdftex.def Info: image/derniere_opt.png used on input line 912.
 (pdftex.def)             Requested size: 400.0pt x 261.6949pt.
  [26 <./image/derniere_opt.png>]
 <image/navexplo_2.png, id=164, 932.48375pt x 540.0175pt>
 File: image/navexplo_2.png Graphic file (type png)
 
 <use image/navexplo_2.png>
-Package pdftex.def Info: image/navexplo_2.png used on input line 925.
+Package pdftex.def Info: image/navexplo_2.png used on input line 930.
 (pdftex.def)             Requested size: 400.0pt x 231.64267pt.
 
 <image/navexplo_iso.png, id=165, 1737.49126pt x 857.2025pt>
 File: image/navexplo_iso.png Graphic file (type png)
 
 <use image/navexplo_iso.png>
-Package pdftex.def Info: image/navexplo_iso.png used on input line 935.
+Package pdftex.def Info: image/navexplo_iso.png used on input line 940.
 (pdftex.def)             Requested size: 400.0pt x 197.33554pt.
  [27 <./image/navexplo_2.png> <./image/navexplo_iso.png>] <image/playground_1.p
 ng, id=171, 1896.08376pt x 798.985pt>
 File: image/playground_1.png Graphic file (type png)
 
 <use image/playground_1.png>
-Package pdftex.def Info: image/playground_1.png used on input line 950.
+Package pdftex.def Info: image/playground_1.png used on input line 955.
 (pdftex.def)             Requested size: 400.0pt x 168.54767pt.
 
 <image/playground_2.png, id=172, 1283.79625pt x 829.0975pt>
 File: image/playground_2.png Graphic file (type png)
 
 <use image/playground_2.png>
-Package pdftex.def Info: image/playground_2.png used on input line 962.
+Package pdftex.def Info: image/playground_2.png used on input line 967.
 (pdftex.def)             Requested size: 400.0pt x 258.32062pt.
  [28 <./image/playground_1.png> <./image/playground_2.png>] <image/n_p_flux_jso
 n.png, id=177, 1665.22125pt x 846.16125pt>
 File: image/n_p_flux_json.png Graphic file (type png)
 
 <use image/n_p_flux_json.png>
-Package pdftex.def Info: image/n_p_flux_json.png used on input line 974.
+Package pdftex.def Info: image/n_p_flux_json.png used on input line 979.
 (pdftex.def)             Requested size: 400.0pt x 203.2507pt.
 
 <image/n_p_iso.png, id=178, 1701.35625pt x 853.1875pt>
 File: image/n_p_iso.png Graphic file (type png)
  <use image/n_p_iso.png>
-Package pdftex.def Info: image/n_p_iso.png used on input line 984.
+Package pdftex.def Info: image/n_p_iso.png used on input line 989.
 (pdftex.def)             Requested size: 400.0pt x 200.59023pt.
 
 <image/n_p_isochrone.png, id=179, 1678.27pt x 855.195pt>
 File: image/n_p_isochrone.png Graphic file (type png)
 
 <use image/n_p_isochrone.png>
-Package pdftex.def Info: image/n_p_isochrone.png used on input line 992.
+Package pdftex.def Info: image/n_p_isochrone.png used on input line 997.
 (pdftex.def)             Requested size: 400.0pt x 203.82863pt.
  [29 <./image/n_p_flux_json.png> <./image/n_p_iso.png>] <image/n_p_heat_map.png
 , id=185, 1724.4425pt x 860.21375pt>
 File: image/n_p_heat_map.png Graphic file (type png)
 
 <use image/n_p_heat_map.png>
-Package pdftex.def Info: image/n_p_heat_map.png used on input line 1002.
+Package pdftex.def Info: image/n_p_heat_map.png used on input line 1007.
 (pdftex.def)             Requested size: 400.0pt x 199.5251pt.
  [30 <./image/n_p_isochrone.png> <./image/n_p_heat_map.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
 
  []
 
 [31
 
+] [32
+
 ] (./rapport.lof)
-\tf@lof=\write4
-\openout4 = `rapport.lof'.
+\tf@lof=\write5
+\openout5 = `rapport.lof'.
 
- (./rapport.bbl [32
+ (./rapport.bbl [33
 
-]) [33
+])
+
+Package glossaries Warning: \makeglossaries hasn't been used,
+the glossaries will not be updated.
+
+
+Package glossaries Warning: No \printglossary or \printglossaries found.
+This document will not have a glossary.
+
+[34
 
 ] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 8010 strings out of 493304
- 109275 string characters out of 6139871
- 264074 words of memory out of 5000000
- 11302 multiletter control sequences out of 15000+600000
+ 11761 strings out of 493304
+ 165104 string characters out of 6139871
+ 374955 words of memory out of 5000000
+ 14935 multiletter control sequences out of 15000+600000
  16988 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,16n,37p,1469b,1657s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,16n,66p,1692b,1699s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
@@ -1175,10 +1363,10 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sftt1000.pfb>
-Output written on rapport.pdf (34 pages, 17150800 bytes).
+Output written on rapport.pdf (35 pages, 17154332 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
+ 278 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 
