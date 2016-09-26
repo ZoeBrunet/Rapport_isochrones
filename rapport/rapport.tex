@@ -93,7 +93,7 @@
 
 \paragraph{} Je tiens à remercier mon maître de stage Guillaume Pinot pour sa disponibilité, son sens de la pédagogie et ses démonstrations de yoyo en pause et en grooming.  Je souhaite remercier également Stephan Simart ou "chef" pour les intimes, ses remarques abondantes en démo et son point de vue marketing ont été bénéfiques pour ce stage.
 
-\paragraph{} Je remercie tout particulièrement toute l'équipe de RO pour son accueil bienveillant. Grâce à leur curiosité et à leurs conseils je ne me suis jamais sentie trop bloquée. J'ai aimé la bonne ambiance au sein de l'équipe qui m'a permis de me sentir à l'aise tout au long de mon stage. Merci spécialement à Antoine et Pierre-Etienne pour m'avoir laissé gagner chaque fois que nous faisions la course à la piscine. Merci également à XL pour ses quizz C++, ses cours sur Pokemon Go et pour ne pas m'avoir laissé toute seule dans les bureaux en août.
+\paragraph{} Je remercie tout particulièrement toute l'équipe de RO pour son accueil bienveillant. Grâce à leur curiosité et à leurs conseils je ne me suis jamais sentie trop bloquée. J'ai aimé la bonne ambiance au sein de l'équipe qui m'a permis de me sentir à l'aise tout au long de mon stage. Merci spécialement à Antoine et Pierre-Etienne pour m'avoir laissé gagner chaque fois que nous faisions la course à la piscine. Merci également à XL pour ses quizz C++, ses cours sur Pokemon Go et pour ne pas m'avoir laissée toute seule dans les bureaux en août.
 
 \paragraph{} Merci à Nicolas Sirletti pour ses rappels sur le cours de traitement d'images et à Antoine Frediani pour son expertise Qgis.
 
@@ -110,7 +110,7 @@
 
 \paragraph{} Ce stage m'a permis d'approfondir les cours de programmation enseignés à l'Ecole Centrale de Nantes. J'ai pu y utiliser plusieurs langages comme Python, C++ et javascript. Je me suis également familiarisée avec la méthode agile utilisée dans de nombreuses entreprises d'informatique. 
 
-\paragraph{} Ce rapport s’attachera  à présenter le contexte de mon stage ingénieur, chez Kisio Digital. Il décrira la mise en place de deux nouvelles API calculant des isochrones dans le logiciel Navitia. Il expliquera le cheminement qui a été suivi afin de créer ces API et de les mettre en production.
+\paragraph{} Ce rapport s’attachera à présenter le contexte de mon stage ingénieur, chez Kisio Digital. Il décrira la mise en place de deux nouvelles API calculant des isochrones dans le logiciel Navitia. Il expliquera le cheminement qui a été suivi afin de créer ces API et de les mettre en production.
 
 \chapter{Contexte du stage}
 
@@ -127,7 +127,7 @@
 	\end{center}
 \end{figure}
 
-\paragraph{} Mon stage a eu lieu chez Kisio Digital, Leader de l'information voyageurs en France, et qui est une entreprise de services numériques. Elle édite des solutions de mobilité intelligentes au service des voyageurs et des acteurs du transport depuis 15 ans. Plus concrètement, elle réalise  des sites web, des applis mobiles et des systèmes d’information voyageurs intégrant la recherche d’itinéraire multimodal et le temps réel, l’achat de titres de transport et bientôt le mobile-ticketing. Son domaine d’activité s’étend des réseaux de transports urbains et régionaux, aux réseaux ferroviaires nationaux (SNCF), en passant par les systèmes d’information-voyageur des Régions. 
+\paragraph{} Mon stage a eu lieu chez Kisio Digital, leader de l'information voyageurs en France, et qui est une entreprise de services numériques. Elle édite des solutions de mobilité intelligente au service des voyageurs et des acteurs du transport depuis 15 ans. Plus concrètement, elle réalise  des sites web, des applis mobiles et des systèmes d’information voyageurs intégrant la recherche d’itinéraire multimodale et le temps réel, l’achat de titres de transport et bientôt le mobile-ticketing. Son domaine d’activité s’étend des réseaux de transports urbains et régionaux, aux réseaux ferroviaires nationaux (SNCF), en passant par les systèmes d’information voyageur des régions. 
 				
 \paragraph{} Kisio Digital encourage aussi l'innovation ouverte auprès des communautés de réutilisateurs de ses logiciels open source tels que Navitia et de son API navitia.io qui calcule 7 milliards d'itinéraires tous les ans.
 
@@ -154,15 +154,13 @@
 	\item[Connaître les besoins de déplacement :] Les autorités organisatrices peuvent mieux adapter leur offre et répondre de façon optimale à la demande grâce aux informations remontées par les SIV.
 \end{description}
 
-\paragraph{} Historiquement les acteurs de la mobilité étaient les transporteurs publics et les vehicules personnels. L'information voyageur n'était disponible que pour les transports publics et se présentait sous forme de fiches papier. Elle ne prenait pas en compte le temps réel et ne proposait aucune personnalisation. Avec la multimodalité due aux nouvelles mobilités, l'installation des Systèmes d'Aides à l'Exploitations et Informations Voyageurs (SAEIV) dans les années 2000  et à l'apparition du numérique la demande d'information voyageur a changé. Les SIV doivent maintenant être interactifs et proposer plusieurs services :
+\paragraph{} Historiquement les acteurs de la mobilité étaient issus soit du monde du transport public, soit de celui du vehicule particulier. L'information voyageur était une notion de transports publics et se présentait sous forme de fiches papier. Elle ne prenait pas en compte le temps réel et ne proposait aucune personnalisation. Avec la multimodalité due aux nouvelles mobilités, l'installation des Systèmes d'Aides à l'Exploitations et Informations Voyageurs (SAEIV) dans les années 2000  et à l'apparition du numérique la demande d'information voyageur a changé. Les SIV doivent maintenant être interactifs et proposer plusieurs services :
 				
 \begin{description}
-	\item[Calculer des itinéraires:]  Il faut pouvoir poposer un "bon" itinéraire, mais cette notion est compliquée à définir. Il y a un compromis à faire entre l'itinéraire arrivant au plus tôt à destination et l'itinéraire avec le moins de correspondances.
+	\item[Calculer des itinéraires:]  Il faut pouvoir poposer un "bon" itinéraire, mais cette notion est compliquée à définir. Il y a un compromis à faire entre l'itinéraire arrivant au plus tôt à destination, celui avec le moins de correspondances, le plus confortable, etc.
 	\item[Accompagner le voyageur au cours du trajet :] Il faut pouvoir proposer en temps réel des alternatives en cas de perturbation sur l'itinéraire initialement prévu.
 	\item[Informer sur l'accessibilité d'un lieu :] Le voyageur a besoin de connaître l'offre de transport à proximité de son point de départ.
 \end{description}
-
-\paragraph{} La première epérimentation de ces concepts à eu lieu à Caen en 2006 et s'appelait Timéo, elle est d'ailleurs toujours utilisée chez Kisio Digital.
 
 \paragraph{} Les solutions proposées par Kisio Digital sont des solutions informatiques alimentées par le logiciel Navitia que nous décrirons plus en détail dans la partie suivante. 
 
@@ -196,7 +194,7 @@ Cette méthode fonctionne sur la base de l'itératif et de l’incrémental, les
 		\label{Organisation des feature team}
 \end{wrapfigure}
 
-\paragraph {Feature team} Lorsque je suis arrivée chez Kisio Digital les équipes était organisées par produit dont elles étaient responsables et les membres de l'équipe avaient souvent des compétences similaires. J'étais par exemple dans l'équipe de Recherche Opérationnelle (RO) qui s'occupait du logiciel Navitia, tous les membres de cette équipe avaient des compétences en Python et en C++. En Juillet, Kisio Digital a changé son organisation pour faire des \emph{feature teams}. Les équipes ont été organisées autour de besoins, ce qui permettait, pour chaque user story, de modifier tous les produits impactés sans changer d'équipe. En outre ce type d'organisation permet une plus grande variété de profil au sein d'une même équipe. Cependant, pour garder la cohérence de chaque produit des \emph{guildes} se sont formées. Ainsi à partir de juillet 2016 les membres de l'ancienne équipe Navitia ont été répartis entre l'équipe itinéraire et l'équipe horaire mais ont aussi fondé la guilde Navitia pour pouvoir garder une interface cohérente au sein du logiciel.cd 
+\paragraph {Feature team} Lorsque je suis arrivée chez Kisio Digital les équipes était organisées par produit dont elles étaient responsables et les membres de l'équipe avaient souvent des compétences similaires. J'étais par exemple dans l'équipe de Recherche Opérationnelle (RO) qui s'occupait du logiciel Navitia, tous les membres de cette équipe avaient des compétences en Python et en C++. En Juillet, Kisio Digital a changé son organisation pour faire des \emph{feature teams}. Les équipes ont été organisées autour de besoins, ce qui permettait, pour chaque user story, de modifier tous les produits impactés sans changer d'équipe. En outre ce type d'organisation permet une plus grande variété de profil au sein d'une même équipe. Cependant, pour garder la cohérence de chaque produit des \emph{guildes} se sont formées. Ainsi à partir de juillet 2016 les membres de l'ancienne équipe Navitia ont été répartis entre l'équipe itinéraire et l'équipe horaire mais ont aussi fondé la guilde Navitia pour pouvoir garder une interface cohérente au sein du logiciel.
 
 \section{Navitia une API open source}
 
@@ -241,17 +239,8 @@ Cette méthode fonctionne sur la base de l'itératif et de l’incrémental, les
 	\end{center}
 \end{figure}
 
-\begin{quote}
-	\textbf{Maintenant Navitia est un \emph{SOA} sous forme d'\emph{ESB} intégrant des \emph{ETLs} spécifiques traitant le \emph{MDM}.}
-\end{quote}
-\begin{description}
-	\item[SOA :] concept d'une architecture orientée service. Organiser de manière homogène les traitements métiers déportés dans des services spécifiques.
-	\item[ESB :] Concept central d'une architecture SOA. Se connecte aux briques métiers pour fournir les services spécifiques.
-	\item[MDM :] standardisation des données. Agrégation : traitement des données dupliquées / dédoublées / enrichissement
-	\item[ETL :] connecteur aux données métier. Transforme les donnés d'un format vers un autre.
-\end{description}
 
-\paragraph{}Navitia repose sur un calculateur codé en C++ nommé Kraken et une interface : Jörmungandr codée en python. Avant tout calcul, tartare un autre logiciel crée une base de données à partir de fichier ntfs. Le format ntfs a été créé pour Navitia et est assez proche du format gtfs. Les données liées à la topologie des territoires et au filaire de voierie sont extraite d'open street map qui est une base de données gégraphiques collaborative, celles liées aux réseaux de transport sont fournies par les opératuers de transport (SAEIV, ...).
+\paragraph{}Navitia repose sur un calculateur codé en C++ nommé Kraken et une interface : Jörmungandr codée en python. Avant tout calcul, tartare un autre logiciel, crée une base de données à partir de fichier ntfs. Le format ntfs a été créé pour Navitia et est assez proche du format gtfs. Les données liées à la topologie des territoires et au filaire de voierie sont extraite d'open street map qui est une base de données gégraphiques collaborative, celles liées aux réseaux de transport sont fournies par les opératuers de transport (SAEIV, ...).
 
 \begin{figure}[H]
 	\begin{center}
@@ -261,17 +250,17 @@ Cette méthode fonctionne sur la base de l'itératif et de l’incrémental, les
 	\end{center}
 \end{figure}
 
-\paragraph{} Le calcul d'itinéraire qui est fait dans Kraken est basé sur l'algorithme RAPTOR. Kraken lit et interprète ensuite les itinéraires pour que Jörmungandr ne renvoie que les meilleurs itinéraires en fonction du profil du voyageur. Les informations sont échangées entre Jörmungandr et Kraken via des fichiers binéarisés générés grâce à des fichiers en protocol buffer.
+\paragraph{} Le calcul d'itinéraire qui est fait dans Kraken est basé sur l'algorithme RAPTOR. Kraken lit et interprète ensuite les itinéraires pour que Jörmungandr ne renvoie que les meilleurs itinéraires en fonction du profil du voyageur. Les informations sont échangées entre Jörmungandr et Kraken via des flux sérialisés au format protocol buffers.
 
 \section{Présentation du stage}
 
 L'intitulé de mon stage était le suivant :
 
 \begin{quote}
-	\emph{"Simplification dans l’utilisation du service Isochrone de l’API de web-service http://api.navitia.io. Le stage concerne la simplification de l’utilisation du service 		"isochrone" qui permet de remonter les temps d'accès depuis un point donné vers toute destination. Il consiste à transformer la sortie actuelle de Navitia (qui est un tableau de 		point avec pour chacun une heure d'arrivée) en éléments graphiques vectoriels permettant de dessiner une carte, plus simple à intégrer. Il nécessite de manipuler principalement du 		code c++, ainsi que du code Python, des librairies de cartographie et des bases de données."}
+	\emph{"Simplification dans l’utilisation du service Isochrone de l’API de web-service http://api.navitia.io. Le stage concerne la simplification de l’utilisation du service "isochrone" qui permet de remonter les temps d'accès depuis un point donné vers toute destination. Il consiste à transformer la sortie actuelle de Navitia (qui est un tableau de point avec pour chacun une heure d'arrivée) en éléments graphiques vectoriels permettant de dessiner une carte, plus simple à intégrer. Il nécessite de manipuler principalement du code c++, ainsi que du code Python, des librairies de cartographie et des bases de données."}
 \end{quote}
 
-\paragraph{} Ce stage implique de coder dans Kraken afin de récupérer les isochrones déjà calculés par lalgorithme RAPTOR pour les traiter et les organiser de manière à rendre ces informations plus visuelles. Il faut ensuite coder dans Jörmungandr afin d'implémenter la nouvelle API. 
+\paragraph{} Ce stage implique de coder dans Kraken afin de récupérer les isochrones déjà calculés par l'algorithme RAPTOR pour les traiter et les organiser de manière à rendre ces informations plus visuelles. Il faut ensuite coder dans Jörmungandr afin d'implémenter la nouvelle API. 
 
 \chapter{Déroulement du stage}
 
@@ -323,7 +312,7 @@ L'intitulé de mon stage était le suivant :
 
 \paragraph{} Comme nous l'avons vu dans la présentation de Navitia, l'architecture du logiciel est assez complexe. La première étape de mon stage consistait donc à spécifier les paramètres d'entrée et de sortie de l'API. Ces paramètres ont été afinés tout au long du stage et ceux présentés dans cette partie correspondent à ceux qui ont été retenus à la fin de mon stage et different légèrement de ceux définis au début de mon stage. 
 
-\paragraph{} Navitia est un unique logiciel qui propose différents services: calcul d'itinéraires, autocomplétion, affichage des horaires d'une ligne de bus, ... Pour que le logiciel reste facilement utilisable il est nécessaire que toutes les APIs soient cohérentes entre elles. Cela signifie : que les APIs doivent être nommées de la même manière, que le nom des paramètres ne doit pas changer d'une API à l'autre, que le cheminement pour accéder à une API doit toujours être le même. Il faut aussi que les noms propres à chaque API soient clairs et sans équivoques. 
+\paragraph{} Navitia est un unique logiciel qui propose différents services: calcul d'itinéraires, autocomplétion, affichage des horaires d'une ligne de bus, ... Pour que le logiciel reste facilement utilisable il est nécessaire que toutes les APIs soient cohérentes entre elles. Cela signifie : que les APIs doivent être nommées selon la même sémantique, que le nom des paramètres ne doit pas changer d'une API à l'autre, que le cheminement pour accéder à une API doit toujours être le même. Il faut aussi que les noms propres à chaque API soient clairs et sans équivoques. 
 
 \paragraph{Quelques règles à respecter} Pour le choix des noms des paramètres d'une API dans Navitia il y a quelques règles à respecter : les paramètres qui peuvent être appelés plusieurs fois sont suivis de crochets \emph{exemple: first\_section\_mode[]}. Les paramètres avancés et ne servant qu'aux développeurs (par exemple pour debuguer) sont précédés d'un underscore \emph{exemple: \_current\_datetime}. Le nom des APIs et de leurs paramètres sont en snake case et au pluriel\emph{exemple: heat\_maps}.
 
@@ -494,7 +483,7 @@ Aucun de ces paramètres n'est obligatoire individuellement mais on ne peut pas 
 
 \end{lstlisting}
 
-\paragraph{} C'est dans le chanps geojson qu'est stoqué l'information géographique. Si on le regarde plus en détail on a un champ de cette forme :
+\paragraph{} C'est dans le chanps geojson qu'est stocké l'information géographique. Si on le regarde plus en détail on a un champ de cette forme :
 
 
 \begin{lstlisting}[language=json,firstnumber=1]
@@ -668,7 +657,7 @@ Aucun de ces paramètres n'est obligatoire individuellement mais on ne peut pas 
  \caption{Algorithme de l'API isochrones}
 \end{algorithm}
 
-\paragraph{heat\_maps :} Cette API est basée sur l'algorithme de Dijkstra. Cette algorithme permet de résoudre les problèmes de plus court chemin dans un graphe. En appliquant l'algorithme de Dijksta au filaire de voierie on peut donc déterminer le temps d'accès minium pour accéder à chaque noeud de la voierie en partant d'un point donné. Pour l'API heat\_maps nous avons besoin d'utiliser un algorithme de Dijkstat un peu particulier car nous ne donnons pas un seul point de départ. En effet l'algorithme de Dijkstra parcourt le graphe toujours à la même "vitesse". Donc pour prendre en compte les différents modes de transport, il faut donner plusieurs points de départ, avec des dates de départs différentes, à l'algorithme de Dijkstra. Par la suite nous appellerons cette algorithme Dijksta\_multi\_start.
+\paragraph{heat\_maps :} Cette API est basée sur l'algorithme de Dijkstra. Cet algorithme permet de résoudre les problèmes de plus court chemin dans un graphe. En appliquant l'algorithme de Dijksta au filaire de voierie on peut donc déterminer le temps d'accès minium pour accéder à chaque noeud de la voierie en partant d'un point donné. Pour l'API heat\_maps nous avons besoin d'utiliser un algorithme de Dijkstra un peu particulier car nous ne donnons pas un seul point de départ. En effet l'algorithme de Dijkstra parcourt le graphe toujours à la même "vitesse". Donc pour prendre en compte les différents modes de transport, il faut donner plusieurs points de départ, avec des dates de départs différentes, à l'algorithme de Dijkstra. Par la suite nous appellerons cette algorithme Dijksta\_multi\_start.
 \newline
 
 \begin{algorithm}[H]
@@ -774,7 +763,7 @@ initialiser Dijksta\_multi\_start \;
 	\end{minipage}
 \end{figure}	
 
-\paragraph{} Par ailleurs on sait que l'équation d'un cercle sur une sphère est l'entemble des points de coordonnées $\theta$ et $\lambda$ tel que \cite{ref_cercle_sphere}:
+\paragraph{} Par ailleurs on sait que l'équation d'un cercle sur une sphère est l'ensemble des points de coordonnées $\theta$ et $\lambda$ tel que \cite{ref_cercle_sphere}:
 \begin{align}
 	\cos\alpha &= \cos\theta\cos\theta_{0} + \sin\theta\sin\theta_{0}\cos(\lambda - \lambda_{0})
 \end{align}
@@ -865,7 +854,7 @@ initialiser Dijksta\_multi\_start \;
 
 \paragraph{} Nous l'avons vu, le calcul des coordonnées d'un cercle sur une sphère est fastidieux et fait appel à des fonctions trigonométriques. Or ces fonctions sont coûteuses en temps, il faut donc les appeler un minimum de fois. Pour celà il est judicieux d'exploiter les nombreuses symétries du cercles. En effet on peut calculer toutes les coordonnées d'un quart de cercle puis utiliser ses symétries par rapport à l'axe des abscisses et des ordonnées d'un repère polaire afin de reconstruire le cercle en entier. Cette opération est d'autant plus facile que ces symétries sont les mêmes qu'en géométrie euclidienne. Cette méthode permet de ne plus appeler les fonctions construisant un point d'un cercle qu'une fois là où elles étaient auparavant appelées quatre fois.
 
-\paragraph{} D'autre part, nous avons déjà vu que les cercles que nous tracions étaient en réalité des cercles échantillonés. Initialement ces polygones possédaient 360 points. En divisant ce nombre par deux, on réduit par deux le nombre d'appels aux fonctions trigonométriques utilisées ce qui permet là encore d'améliorer le temps de réponse de l'API.
+\paragraph{} D'autre part, nous avons déjà vu que les cercles que nous traçions étaient en réalité des cercles échantillonés. Initialement ces polygones possédaient 360 points. En divisant ce nombre par deux, on réduit par deux le nombre d'appels aux fonctions trigonométriques utilisées ce qui permet là encore d'améliorer le temps de réponse de l'API.
 
 \paragraph{} Après toutes les optimisations que nous venons de décrire nous pouvons tracer la courbe bleue qui représente les nouveaux temps de réponse :
 
@@ -905,7 +894,7 @@ initialiser Dijksta\_multi\_start \;
 	d &= \sqrt{r^2\left(\theta_{2} - \theta_{1}\right)+\left(\lambda_{2} - \lambda_{1}\right)\cos\theta_{1}}
 \end{align}
 
-\paragraph{} Cette nouvelle fonction permettant de calculer les distances est utilisée dans l'API isochrones afin d'ordonner les points d'arrêt et de calculer le rayon des cercles à tracer autour d'eux. Elle est aussi utilisée dans l'API heat\_maps où elle permet de projeter les centre des pixels de la grille d'échantillonnage sur les arcs du graphe du filaire de voierie. Dans les deux cas cette formule abaisse significativement le temps de calcul dans Kraken. 
+\paragraph{} Cette nouvelle fonction permettant de calculer les distances est utilisée dans l'API isochrones afin d'ordonner les points d'arrêt et de calculer le rayon des cercles à tracer autour d'eux. Elle est aussi utilisée dans l'API heat\_maps où elle permet de projeter les centres des pixels de la grille d'échantillonnage sur les arcs du graphe du filaire de voierie. Dans les deux cas cette formule abaisse significativement le temps de calcul dans Kraken. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -919,11 +908,11 @@ initialiser Dijksta\_multi\_start \;
 
 \section{La visualisation}
 
-\paragraph{} Même si mon stage consistait à retourner des flux json, il était essentiel de pouvoir visualiser ces flux afin de corriger les bugs. Dans un premier temps j'ai utilisé le logiciel qgis en redirigeant les flux json renvoyés par l'API dans un fichier .txt. Je modifiais ensuite ce fichier à la main afin d'en extraire la partie affichable. Mais cette solution était peu satisaisante, ne fonctionnait pas simplement avec l'API heat\_maps et était trop coûteuse en temps. J'ai donc utilisé deux outils internes de Kisio Digital dans lesquels j'ai codé en javascript des appels aux API isochrones et heat\_maps. Cette partie présente le fonctionnement des deux interfaces homme machine (IHM) utilisées.
+\paragraph{} Même si mon stage consistait à retourner des flux json, il était essentiel de pouvoir visualiser ces flux afin de corriger les bugs. Dans un premier temps j'ai utilisé le logiciel qgis en redirigeant les flux json renvoyés par l'API dans un fichier ".txt". Je modifiais ensuite ce fichier à la main afin d'en extraire la partie affichable. Mais cette solution était peu satisaisante, ne fonctionnait pas simplement avec l'API heat\_maps et était trop coûteuse en temps. J'ai donc utilisé deux outils internes de Kisio Digital dans lesquels j'ai codé en javascript des appels aux API isochrones et heat\_maps. Cette partie présente le fonctionnement des deux interfaces homme machine (IHM) utilisées.
 
 \subsection{Navitia Explorer}
 
-\paragraph{} \emph{Navitia Explorer} est l'IHM qui a été utilisée jusqu'en juin 2016 par les dévelopeurs de Kisio Digital. Développée par le pôle data elle permet de visualiser simplement les réponses de Navitia. Son code est disponnible sur \color{blue} https://github.com/CanalTP/navitia-explorer\color{black}. Cette IHM présente les réponses de Navitia sous forme de cartes, de liste et de tableaux afin d'être facilement lisibles.
+\paragraph{} \emph{Navitia Explorer} est l'IHM qui a été utilisée jusqu'en juin 2016 par les dévelopeurs de Kisio Digital. Développée par l'équipe "data" elle permet de visualiser simplement les réponses de Navitia. Son code est disponnible sur \color{blue} https://github.com/CanalTP/navitia-explorer\color{black}. Cette IHM présente les réponses de Navitia sous forme de cartes, de listes et de tableaux afin d'être facilement lisibles.
 
 \begin{figure}[H]
 	\begin{center}
@@ -933,7 +922,7 @@ initialiser Dijksta\_multi\_start \;
 	\end{center}
 \end{figure}
 
-\paragraph{} Toutes les APIs de Navitia sont accessibles grâces aux onglets situés en haut de la page. Pour accéder à l'API isochrones j'ai donc créé un onglet supplémentaire.
+\paragraph{} Toutes les APIs de Navitia sont accessibles grâce aux onglets situés en haut de la page. Pour accéder à l'API isochrones j'ai donc créé un onglet supplémentaire.
 
 \begin{figure}[H]
 	\begin{center}
@@ -948,7 +937,7 @@ initialiser Dijksta\_multi\_start \;
 
 \subsection{Navitia Playground}
 
-\paragraph{} En mai, Kisio Digital a monté une équipe afin d'implémenter une nouvelle IHM permettant de se familiariser avec le fonctionnement de Navitia. Cette équipe à codé en un mois \emph{Navitia playground} dont le code est disponible sur \color{blue} https://github.com/CanalTP/navitia-playground \color{black}. Contrairement à \emph{Navitia explorer}, cette IHM n'est pas composée de plusieurs onglets. 
+\paragraph{} En mai, Kisio Digital a monté une équipe afin d'implémenter une nouvelle IHM permettant de se familiariser avec le fonctionnement de Navitia. Cette équipe à codé en un mois \emph{Navitia playground} dont le code est disponible sur \color{blue} https://github.com/CanalTP/navitia-playground \color{black}. Contrairement à \emph{Navitia explorer}, cette IHM est composée d'une unique page, sans onglets. 
 
 \begin{figure}[H]
 	\begin{center}
